@@ -60,10 +60,16 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         --['<C-Space>'] = cmp.mapping.complete(),
-        --['<Esc>'] = cmp.mapping.close(),
+        --['<BS>'] = cmp.mapping.close(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<Tab>'] = cmp.mapping.select_next_item({
+          behavior = cmp.SelectBehavior.Select
+        }),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item({
+          behavior = cmp.SelectBehavior.Select
+        })
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },

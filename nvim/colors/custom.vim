@@ -23,7 +23,6 @@ hi Special          NONE
 hi Underlined       NONE
 hi Ignore           NONE
 hi Todo             NONE
-hi Error            NONE ctermfg=1
 
 hi WildMenu         NONE
 
