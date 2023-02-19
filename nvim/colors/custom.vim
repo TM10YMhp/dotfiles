@@ -27,14 +27,15 @@ hi Error            NONE ctermfg=1
 
 hi WildMenu         NONE
 
-hi StatusLine       NONE cterm=BOLD
-hi StatusLineNC     NONE ctermfg=8
+hi StatusLine       NONE cterm=bold
+hi StatusLineNC     NONE cterm=italic
 
 hi StatusLineTerm   NONE
 hi StatusLineTermNC NONE
-hi ErrorMsg NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
+
+hi ErrorMsg NONE
 hi! link ErrorMsg Error
 
 hi ModeMsg          ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
@@ -56,8 +57,8 @@ hi! link Folded     LineNr
 hi Visual      NONE cterm=reverse
 hi! link VisualNOS Visual
 
-hi TabLine     NONE ctermfg=8
-hi TabLineSel  NONE cterm=BOLD
+hi TabLine     NONE cterm=italic
+hi TabLineSel  NONE cterm=bold
 hi TabLineFill NONE
 
 hi Pmenu       NONE
@@ -67,27 +68,8 @@ hi PmenuThumb  NONE cterm=reverse
 
 hi! link BufTabLineActive TabLineSel
 
-"in progress
-hi VertSplit        ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi Title            ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi helpLeadBlank    ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi helpNormal       ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi SpecialKey       ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi DiffAdd          ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi DiffChange       ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi DiffDelete       ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi DiffText         ctermbg=3 ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi Directory        ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi MatchParen       ctermbg=NONE ctermfg=10 cterm=reverse guibg=NONE guifg=green gui=reverse
-hi SpellBad ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#ff0000
-hi SpellCap ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#0000ff
-hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#ff00ff
-hi SpellRare ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#00ffff
-hi ColorColumn      ctermbg=2  ctermfg=NONE cterm=NONE guibg=#808080 guifg=NONE gui=NONE
-hi SignColumn       ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi Question         ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi QuickFixLine     ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi ToolbarLine      ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi ToolbarButton    ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi debugPC          ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi debugBreakpoint  ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+hi ColorColumn NONE cterm=reverse
+hi SignColumn  NONE
+
+hi MatchParen  NONE cterm=reverse
+hi Title       NONE
