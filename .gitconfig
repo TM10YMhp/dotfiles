@@ -1,0 +1,16 @@
+[alias]
+	loa = log --oneline --all
+	loaf = log --oneline --all -15
+	sts = status -sb
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	loag = log --oneline --all --graph
+	loafg = log --oneline --all --graph -15
+  last = log -1 HEAD --stat
+[user]
+	email = tm10ymhp@protonmail.com
+	name = tm10ymhp
+[core]
+	editor = nvim
