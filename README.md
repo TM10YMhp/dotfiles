@@ -1,8 +1,14 @@
 ## Dotfiles
 
-**Advertencia** : No use esta configuración a menos que sepa lo que implica.
+**Advertencia**: No use esta configuración a menos que sepa lo que implica.
 
 ![screenshot_nvim](./images/screenshot_nvim.png)
+
+Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes)
+
+```bash
+NODE_OPTIONS=--max-old-space-size=500
+```
 
 ### Requesitos
 
