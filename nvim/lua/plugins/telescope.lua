@@ -20,7 +20,7 @@ return {
         --layout_strategy = "bottom_pane",
         sorting_strategy = "ascending",
         layout_config = {
-          width = { 0.7, min = 90 },
+          width = { 0.7, min = 80 },
           height = 35,
           preview_cutoff = 0,
           preview_width = 0.6,
