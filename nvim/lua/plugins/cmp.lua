@@ -63,7 +63,7 @@ return {
         --['<BS>'] = cmp.mapping.close(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = cmp.mapping.select_next_item({
           behavior = cmp.SelectBehavior.Select
         }),
