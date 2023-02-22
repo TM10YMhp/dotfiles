@@ -23,6 +23,7 @@ return {
     require("mason-lspconfig").setup()
 
     local lspconfig = require("lspconfig")
+    require('lspconfig.ui.windows').default_options.border = 'single'
 
     local lsp_flags = { debounce_text_changes = 150 }
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -43,7 +44,11 @@ return {
     lspconfig.tailwindcss.setup{
       settings = {
         tailwindCSS = {
+          hovers = true,
           suggestions = false,
+          emmetCompletions = false,
+          colorDecorators = false,
+          codeActions = false,
         }
       }
     }

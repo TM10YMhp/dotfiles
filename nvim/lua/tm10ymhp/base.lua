@@ -14,7 +14,7 @@ vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
 vim.opt.wildmenu = false
 vim.opt.wildmode = "list:longest,full"
 --vim.opt.fillchars = "lastline: "
---vim.opt.listchars:append({ extends = '>',precedes = '<' })
+--vim.opt.listchars:append({ eol = '$', extends = '>',precedes = '<' })
 
 vim.cmd('filetype plugin indent off')
 --vim.cmd('filetype off')
