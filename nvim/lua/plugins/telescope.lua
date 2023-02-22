@@ -9,12 +9,24 @@ return {
     vim.cmd [[
       hi TelescopeSelection cterm='none'
     ]]
+
     local actions = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
     local action_state = require("telescope.actions.state")
 
     require("telescope").setup({
       defaults = {
+        file_ignore_patterns = { "^.git/" },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden"
+        },
         border = true,
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         --layout_strategy = "bottom_pane",
@@ -46,11 +58,17 @@ return {
           hide_on_startup = true
         }
       },
-      --pickers = {
-      --  find_files = {
-      --    theme = "ivy",
-      --  }
-      --},
+      pickers = {
+        find_files = {
+          hidden = true,
+          --theme = "ivy",
+        },
+      },
+      extensions = {
+        file_browser = {
+          hidden = true,
+        }
+      }
     })
 
     require("telescope").load_extension("file_browser")
