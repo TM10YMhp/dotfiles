@@ -83,7 +83,7 @@ return {
         },
       }),
       completion = {
-        keyword_length = 1,
+        --keyword_length = 1,
         --autocomplete = false
       },
       window = {

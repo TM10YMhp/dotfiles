@@ -37,10 +37,6 @@ hi! link StatusLineTermNC StatusLineNC
 hi ErrorMsg NONE
 hi! link ErrorMsg Error
 
-hi ModeMsg          ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi MoreMsg          ctermbg=NONE ctermfg=13   cterm=NONE guibg=NONE guifg=#ff00ff gui=NONE
-hi WarningMsg       ctermbg=NONE ctermfg=1  cterm=NONE guibg=NONE guifg=#ff0000 gui=NONE
-
 hi IncSearch        NONE cterm=reverse
 hi Search           NONE cterm=reverse
 

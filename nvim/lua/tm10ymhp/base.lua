@@ -10,6 +10,7 @@ vim.opt.fileencoding = 'utf-8'
 vim.opt.compatible = false
 vim.opt.shortmess:append("IF")
 
+vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
 --vim.opt.wildmenu = false
 vim.opt.wildmode = "longest:full,full"
