@@ -7,11 +7,12 @@ vim.keymap.set('n', '<leader>h', ':set hls!<cr>', opts)
 vim.keymap.set('n', '<leader>o', ':set list!<cr>', opts)
 
 vim.keymap.set('n', '<leader>nt', ':Telescope file_browser<cr>', opts)
+vim.keymap.set('n', '<leader>na', ':Telescope file_browser path=%:p:h<cr>', opts)
 vim.keymap.set('n', '<leader>t', ':Telescope find_files<cr>', opts)
 vim.keymap.set('n', '<leader>b', ':Telescope buffers<cr>', opts)
 vim.keymap.set('n', '<leader>g', ':Telescope live_grep<cr>', opts)
 
-vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
+--vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 

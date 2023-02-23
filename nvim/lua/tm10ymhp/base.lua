@@ -11,8 +11,8 @@ vim.opt.compatible = false
 vim.opt.shortmess:append("IF")
 
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
-vim.opt.wildmenu = false
-vim.opt.wildmode = "list:longest,full"
+--vim.opt.wildmenu = false
+vim.opt.wildmode = "longest:full,full"
 --vim.opt.fillchars = "lastline: "
 --vim.opt.listchars:append({ eol = '$', extends = '>',precedes = '<' })
 
