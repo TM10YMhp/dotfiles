@@ -48,7 +48,8 @@ vim.opt.rulerformat = [[%l:%c%V|%L]]
 vim.opt.foldmethod = "manual"
 vim.opt.foldenable = false
 vim.opt.complete = "."
-vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
+--vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
+vim.opt.completeopt = "menu"
 vim.opt.hidden = false
 
 vim.opt.cindent = false

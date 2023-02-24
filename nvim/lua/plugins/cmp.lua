@@ -76,16 +76,13 @@ return {
         },{
         {
           name = 'buffer',
-          --max_item_count = 4
-          option = {
-            --keyword_pattern = [[\k\+]]
-          },
+          --keyword_length = 3,
         },
       }),
-      completion = {
+      --completion = {
         --keyword_length = 1,
         --autocomplete = false
-      },
+      --},
       window = {
         --completion = { border = "single" },
         --documentation = cmp.config.disable
