@@ -38,6 +38,7 @@ vim.opt.ttimeoutlen = 100
 vim.opt.title = false
 vim.opt.laststatus = 3
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 vim.opt.number = true
 vim.opt.showcmd = false
 vim.opt.showmode = false
@@ -75,7 +76,8 @@ vim.opt.inccommand = ""
 vim.opt.synmaxcol = 120
 vim.opt.belloff = "all"
 vim.opt.hlsearch = false
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = false
 vim.opt.background = "dark"
 

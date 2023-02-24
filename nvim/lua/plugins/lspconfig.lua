@@ -29,23 +29,23 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
-      autostart = false,
+      --autostart = false,
       flags = lsp_flags,
       capabilities = capabilities,
     }
 
     lspconfig.astro.setup{
-      autostart = false,
+      --autostart = false,
       flags = lsp_flags,
     }
 
     lspconfig.rust_analyzer.setup{
-      autostart = false,
+      --autostart = false,
       flags = lsp_flags,
     }
 
     lspconfig.tailwindcss.setup{
-      autostart = false,
+      --autostart = false,
       settings = {
         tailwindCSS = {
           hovers = true,
