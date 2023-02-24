@@ -3,14 +3,15 @@ return {
   --"tamton-aquib/keys.nvim",
   {
     "ap/vim-buftabline",
-    lazy = false,
+    --lazy = false,
+    event = "BufRead",
   },
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
       require('Comment').setup({
-        padding = false
+        padding = false,
       })
     end
   },

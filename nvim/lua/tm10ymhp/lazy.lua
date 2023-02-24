@@ -19,7 +19,7 @@ require("lazy").setup("plugins", {
     colorscheme = { "custom" },
   },
   ui = {
-    size = { width = 0.7, height = 35 },
+    size = { width = 0.8, height = 30 },
     wrap = true,
     border = "single",
     icons = {
@@ -30,7 +30,7 @@ require("lazy").setup("plugins", {
       init = "",
       import = "",
       keys = "",
-      lazy = "鈴 ",
+      lazy = "zᶻᶻ",
       loaded = "●",
       not_loaded = "○",
       plugin = "",
@@ -46,6 +46,7 @@ require("lazy").setup("plugins", {
       },
     },
   },
+  throttle = 100,
   checker = {
     enable = false,
   },
