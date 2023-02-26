@@ -67,6 +67,8 @@ return {
       extensions = {
         file_browser = {
           hidden = true,
+          --dir_icon = '',
+          --git_status = false
         }
       }
     })

@@ -3,8 +3,7 @@ return {
   --"tamton-aquib/keys.nvim",
   {
     "ap/vim-buftabline",
-    --lazy = false,
-    event = "BufRead",
+    lazy = false,
   },
   {
     "numToStr/Comment.nvim",

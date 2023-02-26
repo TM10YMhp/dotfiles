@@ -1,5 +1,5 @@
 local cmp_kinds = {
-  Text = 'v',
+  Text = 'b',
   Method = 'f',
   Function = 'f',
   Constructor = 'f',
@@ -45,11 +45,12 @@ return {
         end,
       },
       formatting = {
-        fields = { "abbr", "kind" },
+        --fields = { "abbr", "kind", "menu" },
         format = function(_, vim_item)
           --vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
           --vim_item.abbr = vim_item.abbr:match("[^(]+")
           vim_item.kind = cmp_kinds[vim_item.kind] or ""
+          vim_item.menu = ""
           return vim_item
         end
       },
@@ -84,14 +85,14 @@ return {
         --autocomplete = false
       --},
       window = {
-        --completion = { border = "single" },
-        --documentation = cmp.config.disable
+        completion = { border = "single" },
         --documentation = cmp.config.window.bordered()
-        --documentation = {
-        --  border = "single",
+        --documentation = cmp.config.disable
+        documentation = {
+          border = "single",
         --  max_width = 45,
         --  max_height = 25,
-        --}
+        }
       },
       performance = {
         debounce = 100,
