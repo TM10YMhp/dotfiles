@@ -7,5 +7,5 @@ parse_git_branch() {
 }
 PS1='\[\e[0;1m\]$(parse_git_branch)\[\e[0;1m\]\w\n\[\033[0m\]\$ '
 
-# ls alias width
+# aliases
 alias ls='ls -p --width=80 --color=auto'
