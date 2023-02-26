@@ -2,7 +2,7 @@
 
 **Advertencia**: No use esta configuración a menos que sepa lo que implica.
 
-![screenshot nvim](./images/screenshot_nvim.png)
+![screenshot nvim](./images/screenshot_nvim.jpg)
 
 Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes).
 Limitar la memoria puede llevar a comportamientos inesperados.
