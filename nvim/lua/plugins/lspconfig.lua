@@ -1,6 +1,5 @@
 return {
   "neovim/nvim-lspconfig",
-  --lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
@@ -29,22 +28,27 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
-      --autostart = false,
       capabilities = capabilities,
+      cmd = { "typescript-language-server", "--stdio" },
+      init_options = {
+        disableAutomaticTypingAcquisition = true,
+        tsserver = {
+          logVerbosity = 'off',
+          trace = 'off',
+          useSyntaxServer = 'never'
+        },
+      },
     }
 
     lspconfig.astro.setup{
-      --autostart = false,
       capabilities = capabilities,
     }
 
     lspconfig.rust_analyzer.setup{
-      --autostart = false,
       capabilities = capabilities,
     }
 
     --lspconfig.tailwindcss.setup{
-    --  --autostart = false,
     --  settings = {
     --    tailwindCSS = {
     --      hovers = true,

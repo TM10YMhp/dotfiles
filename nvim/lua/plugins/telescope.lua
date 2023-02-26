@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope-file-browser.nvim"
+    "nvim-telescope/telescope-file-browser.nvim",
   },
   config = function ()
     vim.cmd [[
