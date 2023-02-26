@@ -76,6 +76,6 @@ vim.g.min_modes = {
   ['t']     = 'T',
 }
 
-vim.opt.statusline = "[%{len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))}]"
-vim.opt.statusline:append("[%{min_modes[v:lua.vim.fn.mode()]}]")
-vim.opt.statusline:append(" %m%f %l:%c/%L")
+vim.opt.statusline = "%m[%{len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))}]"
+vim.opt.statusline:append(" %{modes[v:lua.vim.fn.mode()]}")
+vim.opt.statusline:append(" | %t | %c:%l/%L")

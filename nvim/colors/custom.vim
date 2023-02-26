@@ -68,6 +68,7 @@ hi SignColumn  NONE
 
 hi MatchParen  NONE cterm=reverse
 hi Title       NONE
+hi Directory   NONE
 
 hi DiffDelete NONE ctermfg=1
 hi DiffAdd    NONE ctermfg=2
