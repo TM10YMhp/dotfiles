@@ -6,11 +6,15 @@ return {
     lazy = false,
   },
   {
+    "voldikss/vim-floaterm",
+    lazy = false,
+  },
+  {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
       require('Comment').setup({
-        padding = false
+        padding = false,
       })
     end
   },
@@ -27,7 +31,6 @@ return {
         silent = false, --Disable message on successful copy
         trim = false,   --Trim text before copy
       }
-      --vim.keymap.set('n', 'Y', osc52.copy_operator, {expr = true})
       vim.keymap.set('x', '%', osc52.copy_visual)
     end
   },

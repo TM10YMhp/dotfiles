@@ -2,15 +2,17 @@
 
 **Advertencia**: No use esta configuración a menos que sepa lo que implica.
 
-![screenshot_nvim](./images/screenshot_nvim.png)
+![screenshot nvim](./images/screenshot_nvim.jpg)
 
-Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes)
+Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes).
+
+Limitar la memoria puede llevar a comportamientos inesperados.
 
 ```bash
-NODE_OPTIONS=--max-old-space-size=500
+NODE_OPTIONS=--max-old-space-size=200
 ```
 
-### Requesitos
+### Requerido
 
 - neovim >= **0.8.0**
 - git >= **2.19.0**
@@ -25,6 +27,6 @@ NODE_OPTIONS=--max-old-space-size=500
 
 ### Opcional
 
+- @mryhryki/markdown-preview
 - npm-check
 - commitizen
-- @mryhryki/markdown-preview

@@ -9,6 +9,7 @@
 	loag = log --oneline --all --graph
 	loafg = log --oneline --all --graph -15
 	last = log -1 HEAD --stat
+  hist = log --pretty=format:\"%C(auto)%h %C(cyan)%cd %C(green)%an <%ae>%Creset %s%C(auto)%d%Creset\" --date=relative
 	empty = commit --allow-empty
 [user]
 	email = tm10ymhp@protonmail.com

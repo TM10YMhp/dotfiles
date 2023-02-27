@@ -1,5 +1,5 @@
 local cmp_kinds = {
-  Text = 'v',
+  Text = 'b',
   Method = 'f',
   Function = 'f',
   Constructor = 'f',
@@ -45,11 +45,12 @@ return {
         end,
       },
       formatting = {
-        fields = { "abbr", "kind" },
+        --fields = { "abbr", "kind", "menu" },
         format = function(_, vim_item)
           --vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
           --vim_item.abbr = vim_item.abbr:match("[^(]+")
           vim_item.kind = cmp_kinds[vim_item.kind] or ""
+          vim_item.menu = ""
           return vim_item
         end
       },
@@ -63,7 +64,7 @@ return {
         --['<BS>'] = cmp.mapping.close(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = cmp.mapping.select_next_item({
           behavior = cmp.SelectBehavior.Select
         }),
@@ -76,25 +77,22 @@ return {
         },{
         {
           name = 'buffer',
-          --max_item_count = 4
-          option = {
-            --keyword_pattern = [[\k\+]]
-          },
+          --keyword_length = 3,
         },
       }),
-      completion = {
-        keyword_length = 1,
+      --completion = {
+        --keyword_length = 1,
         --autocomplete = false
-      },
+      --},
       window = {
-        --completion = { border = "single" },
-        --documentation = cmp.config.disable
+        completion = { border = "single" },
         --documentation = cmp.config.window.bordered()
-        --documentation = {
-        --  border = "single",
+        --documentation = cmp.config.disable
+        documentation = {
+          border = "single",
         --  max_width = 45,
         --  max_height = 25,
-        --}
+        }
       },
       performance = {
         debounce = 100,

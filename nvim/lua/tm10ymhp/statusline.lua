@@ -1,5 +1,5 @@
 --control character
-vim.g.currentmode = {
+vim.g.modes = {
   ['n']     = 'NORMAL',
   ['no']    = 'O-PENDING',
   ['nov']   = 'O-PENDING',
@@ -37,5 +37,45 @@ vim.g.currentmode = {
   ['!']     = 'SHELL',
   ['t']     = 'TERMINAL',
 }
+vim.g.min_modes = {
+  ['n']     = 'N',
+  ['no']    = 'N',
+  ['nov']   = 'N',
+  ['noV']   = 'N',
+  ['no\22'] = 'N',
+  ['niI']   = 'N',
+  ['niR']   = 'N',
+  ['niV']   = 'N',
+  ['nt']    = 'N',
+  ['ntT']   = 'N',
+  ['v']     = 'V',
+  ['vs']    = 'V',
+  ['V']     = 'V',
+  ['Vs']    = 'V',
+  ['\22']   = 'V',
+  ['\22s']  = 'V',
+  ['s']     = 'S',
+  ['S']     = 'S',
+  ['\19']   = 'S',
+  ['i']     = 'I',
+  ['ic']    = 'I',
+  ['ix']    = 'I',
+  ['R']     = 'R',
+  ['Rc']    = 'R',
+  ['Rx']    = 'R',
+  ['Rv']    = 'V',
+  ['Rvc']   = 'V',
+  ['Rvx']   = 'V',
+  ['c']     = 'C',
+  ['cv']    = 'E',
+  ['ce']    = 'E',
+  ['r']     = 'R',
+  ['rm']    = 'M',
+  ['r?']    = 'C',
+  ['!']     = 'S',
+  ['t']     = 'T',
+}
 
-vim.opt.statusline = [[ %{currentmode[v:lua.vim.fn.mode()]} | %f | %L | %l:%c]]
+vim.opt.statusline = "%m[%{len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))}]"
+vim.opt.statusline:append(" %{modes[v:lua.vim.fn.mode()]}")
+vim.opt.statusline:append(" | %t | %c:%l/%L")

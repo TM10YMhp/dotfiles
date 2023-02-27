@@ -10,11 +10,12 @@ vim.opt.fileencoding = 'utf-8'
 vim.opt.compatible = false
 vim.opt.shortmess:append("IF")
 
+vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
-vim.opt.wildmenu = false
-vim.opt.wildmode = "list:longest,full"
+--vim.opt.wildmenu = false
+vim.opt.wildmode = "longest:full,full"
 --vim.opt.fillchars = "lastline: "
---vim.opt.listchars:append({ extends = '>',precedes = '<' })
+--vim.opt.listchars:append({ eol = '$', extends = '>',precedes = '<' })
 
 vim.cmd('filetype plugin indent off')
 --vim.cmd('filetype off')
@@ -37,6 +38,7 @@ vim.opt.ttimeoutlen = 100
 vim.opt.title = false
 vim.opt.laststatus = 3
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 vim.opt.number = true
 vim.opt.showcmd = false
 vim.opt.showmode = false
@@ -46,7 +48,8 @@ vim.opt.rulerformat = [[%l:%c%V|%L]]
 vim.opt.foldmethod = "manual"
 vim.opt.foldenable = false
 vim.opt.complete = "."
-vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
+--vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
+vim.opt.completeopt = "menu"
 vim.opt.hidden = false
 
 vim.opt.cindent = false
@@ -75,6 +78,7 @@ vim.opt.synmaxcol = 120
 vim.opt.belloff = "all"
 vim.opt.hlsearch = false
 vim.opt.cursorline = false
+vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = false
 vim.opt.background = "dark"
 

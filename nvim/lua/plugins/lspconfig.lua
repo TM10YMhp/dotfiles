@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  lazy = false,
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -11,8 +11,8 @@ return {
       ui = {
         check_outdated_packages_on_open = false,
         border = "single",
-        width = 0.7,
-        height = 35,
+        width = 0.8,
+        height = 30,
         icons = {
           package_installed = "●",
           package_pending = "-",
@@ -23,29 +23,41 @@ return {
     require("mason-lspconfig").setup()
 
     local lspconfig = require("lspconfig")
+    require('lspconfig.ui.windows').default_options.border = 'single'
 
-    local lsp_flags = { debounce_text_changes = 150 }
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
-      flags = lsp_flags,
-      capabilities = capabilities
+      capabilities = capabilities,
+      cmd = { "typescript-language-server", "--stdio" },
+      init_options = {
+        disableAutomaticTypingAcquisition = true,
+        tsserver = {
+          logVerbosity = 'off',
+          trace = 'off',
+          useSyntaxServer = 'never'
+        },
+      },
     }
 
     lspconfig.astro.setup{
-      flags = lsp_flags,
+      capabilities = capabilities,
     }
 
     lspconfig.rust_analyzer.setup{
-      flags = lsp_flags,
+      capabilities = capabilities,
     }
 
-    lspconfig.tailwindcss.setup{
-      settings = {
-        tailwindCSS = {
-          suggestions = false,
-        }
-      }
-    }
+    --lspconfig.tailwindcss.setup{
+    --  settings = {
+    --    tailwindCSS = {
+    --      hovers = true,
+    --      suggestions = false,
+    --      emmetCompletions = false,
+    --      colorDecorators = false,
+    --      codeActions = false,
+    --    }
+    --  }
+    --}
   end
 }
