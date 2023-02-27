@@ -6,6 +6,10 @@ return {
     lazy = false,
   },
   {
+    "voldikss/vim-floaterm",
+    lazy = false,
+  },
+  {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
