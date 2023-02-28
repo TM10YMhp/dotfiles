@@ -8,6 +8,26 @@ return {
     lazy = false,
   },
   {
+    "phaazon/hop.nvim",
+    event = "VeryLazy",
+    config = function()
+      require('hop').setup({
+        case_insensitive = false,
+        create_hl_autocmd = false,
+      })
+
+      vim.cmd[[hi HopUnmatched NONE]]
+      vim.cmd[[hi HopNextKey  NONE cterm=reverse,bold]]
+      vim.cmd[[hi HopNextKey1 NONE cterm=reverse,bold]]
+      vim.cmd[[hi HopNextKey2 NONE cterm=reverse,bold]]
+
+      vim.keymap.set('n', 'f', "<cmd>lua require'hop'.hint_char2()<cr>", { remap = false })
+      vim.keymap.set('v', 'f', "<cmd>lua require'hop'.hint_char2()<cr>", { remap = false })
+      vim.keymap.set('n', 'F', "<cmd>lua require'hop'.hint_words()<cr>", { remap = false })
+      vim.keymap.set('v', 'F', "<cmd>lua require'hop'.hint_words()<cr>", { remap = false })
+    end
+  },
+  {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
