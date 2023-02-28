@@ -15,7 +15,8 @@ vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
 vim.opt.listchars:append({
-  eol = '~',
+  eol = '¬',
+  nbsp = '+',
   space = ' ',
   trail = '·',
   tab = '> ',

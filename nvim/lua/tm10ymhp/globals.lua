@@ -6,7 +6,7 @@ vim.g.buftabline_numbers = 1
 vim.g.buftabline_plug_max = 0
 
 vim.g.floaterm_width = 0.8
-vim.g.floaterm_height = 35
+vim.g.floaterm_height = 0.8
 vim.g.floaterm_keymap_new = '<s-b>c'
 vim.g.floaterm_keymap_prev = '<s-b>p'
 vim.g.floaterm_keymap_next = '<s-b>n'

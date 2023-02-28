@@ -23,11 +23,14 @@ return {
     require("mason-lspconfig").setup()
 
     local lspconfig = require("lspconfig")
-    require('lspconfig.ui.windows').default_options.border = 'single'
+    require('lspconfig.ui.windows').default_options = {
+      border = 'single',
+    }
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
+      --autostart = false,
       capabilities = capabilities,
       cmd = { "typescript-language-server", "--stdio" },
       init_options = {
@@ -41,10 +44,12 @@ return {
     }
 
     lspconfig.astro.setup{
+      --autostart = false,
       capabilities = capabilities,
     }
 
     lspconfig.rust_analyzer.setup{
+      --autostart = false,
       capabilities = capabilities,
     }
 
