@@ -1,6 +1,4 @@
 return {
-  --"bling/vim-bufferline",
-  --"tamton-aquib/keys.nvim",
   {
     "ap/vim-buftabline",
     lazy = false,
@@ -22,6 +20,10 @@ return {
     "ojroques/nvim-osc52",
     event = "VeryLazy",
     config = function()
+
+      --Here is a non-exhaustive list of the status of popular terminal
+      --emulators regarding OSC52  (https://github.com/ojroques/vim-oscyank)
+
       --If you are using tmux, run these steps first: enabling OSC52 in tmux.
       --Then make sure set-clipboard is set to on: set -s set-clipboard on.
 

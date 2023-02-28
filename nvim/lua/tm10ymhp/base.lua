@@ -12,10 +12,17 @@ vim.opt.shortmess:append("IF")
 
 vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
---vim.opt.wildmenu = false
+vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
+vim.opt.listchars:append({
+  eol = '~',
+  space = ' ',
+  trail = '·',
+  tab = '> ',
+  extends = '►',
+  precedes = '◄'
+})
 --vim.opt.fillchars = "lastline: "
---vim.opt.listchars:append({ eol = '$', extends = '>',precedes = '<' })
 
 vim.cmd('filetype plugin indent off')
 --vim.cmd('filetype off')
