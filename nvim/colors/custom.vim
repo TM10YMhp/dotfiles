@@ -8,7 +8,7 @@ endif
 let colors_name = "custom"
 
 hi Normal           NONE
-hi NonText          NONE
+"hi NonText          NONE
 hi Comment          NONE cterm=italic
 
 hi Conceal          NONE cterm=underline

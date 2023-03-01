@@ -8,6 +8,10 @@ return {
     lazy = false,
   },
   {
+    "machakann/vim-sandwich",
+    lazy = false,
+  },
+  {
     "phaazon/hop.nvim",
     event = "VeryLazy",
     config = function()
