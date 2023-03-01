@@ -11,6 +11,7 @@
 	last = log -1 HEAD --stat
 	hist = log --pretty=format:\"%C(auto)%h %C(cyan)%cd %C(green)%an <%ae>%Creset %s%C(auto)%d%Creset\" --date=relative
 	empty = commit --allow-empty
+	a = !sh -c 'git add -- "$@" && git status' --
 [user]
 	email = tm10ymhp@protonmail.com
 	name = tm10ymhp
