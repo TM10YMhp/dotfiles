@@ -19,9 +19,9 @@ vim.opt.listchars:append({
   nbsp = '+',
   space = ' ',
   trail = '·',
-  tab = '> ',
-  extends = '►',
-  precedes = '◄'
+  tab = '→ ',
+  extends = '»',
+  precedes = '«'
 })
 --vim.opt.fillchars = "lastline: "
 
