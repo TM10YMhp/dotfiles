@@ -35,12 +35,21 @@ return {
       cmd = { "typescript-language-server", "--stdio" },
       init_options = {
         disableAutomaticTypingAcquisition = true,
+        preferences = {
+          quotePreference = "double",
+          includeAutomaticOptionalChainCompletions = false,
+          importModuleSpecifierPreference = "shortest",
+          importModuleSpecifierEnding = "minimal",
+        },
         tsserver = {
           logVerbosity = 'off',
           trace = 'off',
           useSyntaxServer = 'never'
         },
       },
+      --root_dir = lspconfig.util.root_pattern(
+      --  "package.json", "tsconfig.json", "jsconfig.json", ".git"
+      --),
     }
 
     lspconfig.astro.setup{
