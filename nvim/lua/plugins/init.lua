@@ -5,11 +5,13 @@ return {
   },
   {
     "voldikss/vim-floaterm",
-    lazy = false,
+    --lazy = false,
+    event = "VeryLazy",
   },
   {
     "machakann/vim-sandwich",
-    lazy = false,
+    --lazy = false,
+    event = "VeryLazy",
   },
   {
     "phaazon/hop.nvim",

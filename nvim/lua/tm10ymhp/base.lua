@@ -4,6 +4,11 @@ vim.opt.mouse = ""
 vim.opt.matchpairs = ""
 vim.opt.eventignore:append("CursorMovedI")
 
+vim.cmd('filetype plugin indent off')
+--vim.cmd('filetype off')
+--polyglot - equal sign(=)
+--filetype indent on
+
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -24,11 +29,6 @@ vim.opt.listchars:append({
   precedes = '«'
 })
 --vim.opt.fillchars = "lastline: "
-
-vim.cmd('filetype plugin indent off')
---vim.cmd('filetype off')
---polyglot - equal sign(=)
---filetype indent on
 
 vim.opt.swapfile = false
 vim.opt.writebackup = false
