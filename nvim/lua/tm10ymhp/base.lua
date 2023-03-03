@@ -82,7 +82,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.incsearch = true
 vim.opt.inccommand = ""
-vim.opt.synmaxcol = 120
+vim.opt.synmaxcol = 150
 vim.opt.belloff = "all"
 vim.opt.hlsearch = false
 vim.opt.cursorline = false

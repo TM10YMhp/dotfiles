@@ -21,7 +21,10 @@ vim.keymap.set('n', '\\', [[:%s///gc<left><left><left>]], opts)
 vim.keymap.set('n', '<leader>h', ':set hls!<cr>', opts)
 vim.keymap.set('n', '<leader>o', ':set list!<cr>', opts)
 
---vim.keymap.set('n', '<leader>l', ':Telescope current_buffer_fuzzy_find<cr>', opts)
+--vim.keymap.set('n', '<leader>a',
+--[[<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find({ sorter=require('telescope.sorters').get_fuzzy_file({}) })<cr>]]
+--, opts)
+
 vim.keymap.set('n', '<leader>l',
 [[<cmd>lua require'telescope.builtin'.live_grep{search_dirs={"%:p"},path_display="hidden"}<cr>]]
 , opts)
