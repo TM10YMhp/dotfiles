@@ -5,6 +5,7 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    "nvim-lua/lsp-status.nvim"
   },
   config = function ()
     require("mason").setup({
@@ -22,6 +23,26 @@ return {
     })
     require("mason-lspconfig").setup()
 
+    local lsp_status = require('lsp-status')
+    lsp_status.register_progress()
+    lsp_status.config({
+      kind_labels = {},
+      select_symbol = nil,
+      current_function = true,
+      show_filename = true,
+      indicator_separator = ':',
+      component_separator = ' ',
+      indicator_errors = 'E',
+      indicator_warnings = 'W',
+      indicator_info = 'i',
+      indicator_hint = '?',
+      indicator_ok = 'Ok',
+      spinner_frames = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
+      status_symbol = ' |',
+      diagnostics = true,
+    })
+    vim.opt.statusline:append("%{v:lua.require('lsp-status').status()} ")
+
     local lspconfig = require("lspconfig")
     require('lspconfig.ui.windows').default_options = {
       border = 'single',
@@ -30,7 +51,7 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
-      --autostart = false,
+      autostart = false,
       capabilities = capabilities,
       cmd = { "typescript-language-server", "--stdio" },
       init_options = {
@@ -53,16 +74,17 @@ return {
     }
 
     lspconfig.astro.setup{
-      --autostart = false,
+      autostart = false,
       capabilities = capabilities,
     }
 
     lspconfig.rust_analyzer.setup{
-      --autostart = false,
+      autostart = false,
       capabilities = capabilities,
     }
 
     --lspconfig.tailwindcss.setup{
+    --  autostart = false,
     --  settings = {
     --    tailwindCSS = {
     --      hovers = true,

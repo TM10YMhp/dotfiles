@@ -79,4 +79,4 @@ vim.g.modes = {
 vim.opt.statusline = "%m[%{len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))}]"
 vim.opt.statusline:append(" %{modes[v:lua.vim.fn.mode()]}")
 vim.opt.statusline:append(" | %t")
-vim.opt.statusline:append(" | row:%l/%L | col:%v ")
+vim.opt.statusline:append(" | row:%l/%L | col:%v")
