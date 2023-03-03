@@ -57,6 +57,7 @@ return {
       sorting = {
         comparators = {
           --cmp.config.compare.length,
+          cmp.config.compare.score,
         },
       },
       mapping = cmp.mapping.preset.insert({

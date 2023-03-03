@@ -64,6 +64,9 @@ return {
           hidden = true,
           --theme = "ivy",
         },
+        current_buffer_fuzzy_find = {
+          --sorter = require('telescope.sorters').get_substr_matcher({})
+        }
       },
       extensions = {
         file_browser = {

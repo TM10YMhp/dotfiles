@@ -16,10 +16,15 @@ vim.keymap.set('n', '<c-z>', '<nop>', opts)
 
 vim.keymap.set('n', '<tab>', ':bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', ':bprevious<cr>', opts)
-vim.keymap.set('n', '\\', ':%s///gc<left><left><left>', opts)
+vim.keymap.set('n', '\\', [[:%s///gc<left><left><left>]], opts)
 
 vim.keymap.set('n', '<leader>h', ':set hls!<cr>', opts)
 vim.keymap.set('n', '<leader>o', ':set list!<cr>', opts)
+
+--vim.keymap.set('n', '<leader>l', ':Telescope current_buffer_fuzzy_find<cr>', opts)
+vim.keymap.set('n', '<leader>l',
+[[<cmd>lua require'telescope.builtin'.live_grep{search_dirs={"%:p"},path_display="hidden"}<cr>]]
+, opts)
 
 vim.keymap.set('n', '<leader>nt', ':Telescope file_browser<cr>', opts)
 vim.keymap.set('n', '<leader>na', ':Telescope file_browser path=%:p:h<cr>', opts)
