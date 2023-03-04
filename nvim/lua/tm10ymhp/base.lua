@@ -5,9 +5,7 @@ vim.opt.matchpairs = ""
 vim.opt.eventignore:append("CursorMovedI")
 
 vim.cmd('filetype plugin indent off')
---vim.cmd('filetype off')
---polyglot - equal sign(=)
---filetype indent on
+--vim.cmd('filetype indent on') --polyglot - equal sign(=)
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'

@@ -31,7 +31,6 @@ return {
         },
         border = true,
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        --layout_strategy = "bottom_pane",
         sorting_strategy = "ascending",
         layout_config = {
           width = { 0.7, min = 90 },
@@ -72,7 +71,6 @@ return {
       extensions = {
         file_browser = {
           hidden = true,
-          --dir_icon = '',
           --git_status = false
         }
       }

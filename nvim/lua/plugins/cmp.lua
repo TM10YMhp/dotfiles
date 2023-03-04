@@ -58,6 +58,7 @@ return {
         comparators = {
           --cmp.config.compare.length,
           cmp.config.compare.score,
+          cmp.config.compare.recently_used,
         },
       },
       mapping = cmp.mapping.preset.insert({
@@ -76,23 +77,15 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         },{
-        {
-          name = 'buffer',
-          --keyword_length = 3,
-        },
+        { name = 'buffer' },
       }),
-      --completion = {
-        --keyword_length = 1,
-        --autocomplete = false
-      --},
       window = {
         completion = { border = "single" },
-        --documentation = cmp.config.window.bordered()
         --documentation = cmp.config.disable
         documentation = {
           border = "single",
-        --  max_width = 45,
-        --  max_height = 25,
+          --max_width = 45,
+          --max_height = 25,
         }
       },
       performance = {
