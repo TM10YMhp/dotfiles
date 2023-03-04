@@ -37,7 +37,7 @@
   ['!']     = 'SHELL',
   ['t']     = 'TERMINAL',
 }]]
-vim.g.min_modes = {
+--[[vim.g.min_modes = {
   ['n']     = 'N',
   ['no']    = 'N',
   ['nov']   = 'N',
@@ -74,13 +74,13 @@ vim.g.min_modes = {
   ['r?']    = 'C',
   ['!']     = 'S',
   ['t']     = 'T',
-}
+}]]
 
 --vim.opt.statusline = "%m[%{len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))}]"
 
 vim.g.buflisted = { buflisted = 1 }
 vim.opt.statusline = "%m[%{len(getbufinfo(buflisted))}]"
-vim.opt.statusline:append(" %{min_modes[v:lua.vim.fn.mode()]}")
+--vim.opt.statusline:append(" %{min_modes[v:lua.vim.fn.mode()]}")
 vim.opt.statusline:append(" | %t")
 vim.opt.statusline:append(" | col:%v/%{strwidth(getline('.'))}")
 vim.opt.statusline:append(" | row:%l/%L")
