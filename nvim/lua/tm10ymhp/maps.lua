@@ -18,7 +18,7 @@ vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', opts)
 vim.keymap.set('n', '\\', [[:%s///gc<left><left><left>]], opts)
 
-vim.keymap.set('n', '<leader>h', '<cmd>set hls!<cr>', opts)
+vim.keymap.set('n', '<leader>h', '<cmd>nohls<cr>', opts)
 vim.keymap.set('n', '<leader>o', '<cmd>set list!<cr>', opts)
 
 --vim.keymap.set('n', '<leader>a',
