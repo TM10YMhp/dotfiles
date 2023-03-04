@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
----move n wrap lines
+---move in wrap lines
 --vim.keymap.set('n', 'k', 'gk', opts)
 --vim.keymap.set('n', 'j', 'gj', opts)
 --vim.keymap.set('n', '<up>', 'gk', opts)
@@ -21,24 +21,10 @@ vim.keymap.set('n', '\\', [[:%s///gc<left><left><left>]], opts)
 vim.keymap.set('n', '<leader>h', '<cmd>nohls<cr>', opts)
 vim.keymap.set('n', '<leader>o', '<cmd>set list!<cr>', opts)
 
---vim.keymap.set('n', '<leader>a',
---[[<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find({ sorter=require('telescope.sorters').get_fuzzy_file({}) })<cr>]]
---, opts)
+vim.keymap.set('n', '<leader>d', '<cmd>lua vim.lsp.buf.definition<cr>', opts)
+vim.keymap.set('n', '<leader>=', '<cmd>lua vim.lsp.buf.format<cr>', opts)
+vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover<cr>', opts)
 
---vim.keymap.set('n', '<leader>l',
---[[<cmd>lua require'telescope.builtin'.live_grep{search_dirs={"%:p"},path_display="hidden"}<cr>]]
---, opts)
-
---vim.keymap.set('n', '<leader>nt', ':Telescope file_browser<cr>', opts)
---vim.keymap.set('n', '<leader>na', ':Telescope file_browser path=%:p:h<cr>', opts)
---vim.keymap.set('n', '<leader>t', ':Telescope find_files<cr>', opts)
---vim.keymap.set('n', '<leader>b', ':Telescope buffers<cr>', opts)
---vim.keymap.set('n', '<leader>g', ':Telescope live_grep<cr>', opts)
-
-vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
-vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, opts)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float<cr>', opts)
+vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev<cr>', opts)
+vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next<cr>', opts)

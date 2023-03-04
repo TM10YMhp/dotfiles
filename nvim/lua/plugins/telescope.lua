@@ -65,9 +65,9 @@ return {
           hidden = true,
           --theme = "ivy",
         },
-        current_buffer_fuzzy_find = {
-          --sorter = require('telescope.sorters').get_substr_matcher({})
-        }
+        --current_buffer_fuzzy_find = {
+        --  sorter = require('telescope.sorters').get_substr_matcher({})
+        --}
       },
       extensions = {
         file_browser = {
@@ -83,18 +83,30 @@ return {
     local builtin = require("telescope.builtin")
     local opts = { noremap = true, silent = true }
 
-    --vim.keymap.set('n', '<leader>a',
-    --[[<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find({ sorter=require('telescope.sorters').get_fuzzy_file({}) })<cr>]]
-    --, opts)
+    --vim.keymap.set('n', '<leader>a', function()
+    --  builtin.current_buffer_fuzzy_find({
+    --    sorter = require('telescope.sorters').get_fuzzy_file({})
+    --  })
+    --end, opts)
 
-    vim.keymap.set('n', '<leader>fl',
-    [[<cmd>lua require'telescope.builtin'.live_grep{search_dirs={"%:p"},path_display="hidden"}<cr>]]
-    , opts)
+    vim.keymap.set('n', '<leader>l', function()
+      builtin.live_grep({
+        search_dirs = { "%:p" },
+        path_display = "hidden"
+      })
+    end, opts)
 
-    vim.keymap.set('n', '<leader>ft', '<cmd>Telescope file_browser<cr>', opts)
-    vim.keymap.set('n', '<leader>fc', '<cmd>Telescope file_browser path=%:p:h<cr>', opts)
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
+    vim.keymap.set('n', '<leader>t', function()
+      telescope.extensions.file_browser.file_browser()
+    end, opts)
+    vim.keymap.set('n', '<leader>c', function()
+      telescope.extensions.file_browser.file_browser({
+        path = "%:p:h"
+      })
+    end, opts)
+    vim.keymap.set('n', '<leader>f', builtin.find_files, opts)
+    vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+    vim.keymap.set('n', '<leader>g', builtin.live_grep, opts)
+    vim.keymap.set('n', '<leader>m', builtin.keymaps, opts)
   end
 }
