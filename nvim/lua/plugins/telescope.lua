@@ -81,11 +81,11 @@ return {
     local builtin = require("telescope.builtin")
     local opts = { noremap = true, silent = true }
 
-    --vim.keymap.set('n', '<leader>a', function()
-    --  builtin.current_buffer_fuzzy_find({
-    --    sorter = require('telescope.sorters').get_fuzzy_file({})
-    --  })
-    --end, opts)
+    --[[vim.keymap.set('n', '<leader>a', function()
+      builtin.current_buffer_fuzzy_find({
+        sorter = require('telescope.sorters').get_fuzzy_file({})
+      })
+    end, opts)]]
 
     vim.keymap.set('n', '<leader>l', function()
       builtin.live_grep({

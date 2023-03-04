@@ -42,7 +42,7 @@ vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 100
 
 vim.opt.title = false
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.number = true

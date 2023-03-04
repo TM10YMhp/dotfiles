@@ -83,17 +83,17 @@ return {
       capabilities = capabilities,
     }
 
-    --lspconfig.tailwindcss.setup{
-    --  autostart = false,
-    --  settings = {
-    --    tailwindCSS = {
-    --      hovers = true,
-    --      suggestions = false,
-    --      emmetCompletions = false,
-    --      colorDecorators = false,
-    --      codeActions = false,
-    --    }
-    --  }
-    --}
+    --[[lspconfig.tailwindcss.setup{
+      autostart = false,
+      settings = {
+        tailwindCSS = {
+          hovers = true,
+          suggestions = false,
+          emmetCompletions = false,
+          colorDecorators = false,
+          codeActions = false,
+        }
+      }
+    }]]
   end
 }
