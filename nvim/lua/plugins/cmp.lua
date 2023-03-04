@@ -58,7 +58,7 @@ return {
         comparators = {
           --cmp.config.compare.length,
           cmp.config.compare.score,
-          cmp.config.compare.recently_used,
+          --cmp.config.compare.recently_used,
         },
       },
       mapping = cmp.mapping.preset.insert({
