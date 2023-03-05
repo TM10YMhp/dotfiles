@@ -5,7 +5,7 @@ HISTCONTROL=ignoreboth:erasedups
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1] /'
 }
-PS1='\[\e[0;1m\]$(parse_git_branch)\w\n\[\033[0m\]\$ '
+PS1='\[\e[0;1m\][\D{%d %H:%M}] $(parse_git_branch)\w\n\[\033[0m\]\$ '
 
 # aliases
 alias ls='ls -p --width=80 --color=auto'
