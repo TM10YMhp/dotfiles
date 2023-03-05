@@ -51,6 +51,7 @@ vim.opt.showcmd = false
 vim.opt.showmode = true
 vim.opt.pumheight = 8
 vim.opt.cmdheight = 1
+vim.opt.ruler = false
 vim.opt.rulerformat = [[%l:%c%V|%L]]
 vim.opt.foldmethod = "manual"
 vim.opt.foldenable = false

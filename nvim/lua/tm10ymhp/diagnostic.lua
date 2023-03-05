@@ -9,7 +9,7 @@ end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     --float = { style = "minimal" },
-    underline = true,
+    underline = false,
     update_in_insert = false,
     virtual_text = false,
     severity_sort = true,

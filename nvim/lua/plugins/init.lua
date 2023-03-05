@@ -19,6 +19,11 @@ return {
       vim.g.floaterm_keymap_prev = '<s-b>p'
       vim.g.floaterm_keymap_next = '<s-b>n'
       vim.g.floaterm_keymap_toggle = '<s-b>h'
+
+      vim.keymap.set('n', '<s-b>"',
+        '<cmd>FloatermNew --wintype=split --height=0.35<cr>',
+        { noremap = true}
+      )
     end
   },
   {
