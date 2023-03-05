@@ -55,6 +55,9 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     lspconfig.tsserver.setup{
+      --root_dir = lspconfig.util.root_pattern(
+      --  "package.json", "tsconfig.json", "jsconfig.json", ".git"
+      --),
       autostart = false,
       capabilities = capabilities,
       cmd = { "typescript-language-server", "--stdio" },
@@ -65,6 +68,14 @@ return {
           includeAutomaticOptionalChainCompletions = false,
           importModuleSpecifierPreference = "shortest",
           importModuleSpecifierEnding = "minimal",
+          includeInlayParameterNameHints = "none",
+          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+          includeInlayFunctionParameterTypeHints = false,
+          includeInlayVariableTypeHints = false,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+          includeInlayPropertyDeclarationTypeHints = false,
+          includeInlayFunctionLikeReturnTypeHints = false,
+          includeInlayEnumMemberValueHints = false,
         },
         tsserver = {
           logVerbosity = 'off',
@@ -72,9 +83,9 @@ return {
           useSyntaxServer = 'never'
         },
       },
-      --root_dir = lspconfig.util.root_pattern(
-      --  "package.json", "tsconfig.json", "jsconfig.json", ".git"
-      --),
+      settings = {
+        --completions = { completeFunctionCalls = true }
+      }
     }
 
     lspconfig.astro.setup{

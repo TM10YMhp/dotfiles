@@ -44,6 +44,9 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      completion = {
+        completeopt = 'menu,menuone,noinsert'
+      },
       formatting = {
         --fields = { "abbr", "kind", "menu" },
         format = function(_, vim_item)

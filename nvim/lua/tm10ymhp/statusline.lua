@@ -1,5 +1,5 @@
 --control character
---[[vim.g.modes = {
+vim.g.modes = {
   ['n']     = 'NORMAL',
   ['no']    = 'O-PENDING',
   ['nov']   = 'O-PENDING',
@@ -36,7 +36,7 @@
   ['r?']    = 'CONFIRM',
   ['!']     = 'SHELL',
   ['t']     = 'TERMINAL',
-}]]
+}
 --[[vim.g.min_modes = {
   ['n']     = 'N',
   ['no']    = 'N',
@@ -80,7 +80,7 @@
 
 vim.g.buflisted = { buflisted = 1 }
 vim.opt.statusline = "%m[%{len(getbufinfo(buflisted))}]"
---vim.opt.statusline:append(" %{min_modes[v:lua.vim.fn.mode()]}")
+vim.opt.statusline:append(" %{modes[v:lua.vim.fn.mode()]}")
 vim.opt.statusline:append(" | %t")
 vim.opt.statusline:append(" | L:%l/%L")
 vim.opt.statusline:append(" | C:%v/%{strwidth(getline('.'))}")
