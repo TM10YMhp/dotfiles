@@ -4,9 +4,6 @@ vim.keymap.set('n', 'ZQ', '<nop>')
 vim.keymap.set('n', '<c-z>', '<nop>')
 
 vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]])
-vim.keymap.set('n', [[\s]], ':LspStart')
-vim.keymap.set('n', [[\r]], ':LspRestart')
-vim.keymap.set('n', [[\i]], ':LspInfo')
 
 local opts = { noremap = true, silent = true }
 

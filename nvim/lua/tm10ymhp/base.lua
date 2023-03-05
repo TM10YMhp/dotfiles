@@ -17,11 +17,12 @@ vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
+vim.opt.list = false
 vim.opt.listchars:append({
   eol = '¬',
   nbsp = '+',
   space = ' ',
-  trail = '·',
+  trail = '╱',
   tab = '→ ',
   extends = '»',
   precedes = '«'
@@ -90,6 +91,4 @@ vim.opt.background = "dark"
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme custom')
-vim.cmd('hi Normal NONE')
-vim.cmd('hi NormalFloat cterm=NONE')
-vim.cmd([[match CursorColumn /\s\+$/]])
+vim.cmd([[match Error /\s\+$/]])

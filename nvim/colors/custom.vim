@@ -8,6 +8,7 @@ endif
 let colors_name = "custom"
 
 hi Normal           NONE
+"hi NormalFloat      NONE
 "hi NonText          NONE
 hi Comment          NONE cterm=italic
 

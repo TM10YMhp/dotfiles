@@ -82,5 +82,5 @@ vim.g.buflisted = { buflisted = 1 }
 vim.opt.statusline = "%m[%{len(getbufinfo(buflisted))}]"
 --vim.opt.statusline:append(" %{min_modes[v:lua.vim.fn.mode()]}")
 vim.opt.statusline:append(" | %t")
-vim.opt.statusline:append(" | col:%v/%{strwidth(getline('.'))}")
-vim.opt.statusline:append(" | row:%l/%L")
+vim.opt.statusline:append(" | L:%l/%L")
+vim.opt.statusline:append(" | C:%v/%{strwidth(getline('.'))}")

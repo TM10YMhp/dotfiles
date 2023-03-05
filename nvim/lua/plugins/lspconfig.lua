@@ -23,6 +23,10 @@ return {
     })
     require("mason-lspconfig").setup()
 
+    vim.keymap.set('n', [[\s]], ':LspStart')
+    vim.keymap.set('n', [[\r]], ':LspRestart')
+    vim.keymap.set('n', [[\i]], ':LspInfo')
+
     local lsp_status = require('lsp-status')
     lsp_status.register_progress()
     lsp_status.config({
@@ -36,7 +40,7 @@ return {
       indicator_warnings = 'W',
       indicator_info = 'i',
       indicator_hint = '?',
-      indicator_ok = 'Ok',
+      indicator_ok = 'LSP',
       spinner_frames = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
       status_symbol = ' |',
       diagnostics = true,
