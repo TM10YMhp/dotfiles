@@ -16,6 +16,8 @@ vim.keymap.set('i', '<up>', '<c-o>gk', opts)
 vim.keymap.set('i', '<down>', '<c-o>gj', opts)
 ]]
 
+vim.keymap.set('n', '<leader>q', '<cmd>%bw<cr>', opts)
+
 vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', opts)
 
