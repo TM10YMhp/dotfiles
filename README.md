@@ -9,7 +9,7 @@ Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](
 Limitar la memoria puede llevar a comportamientos inesperados.
 
 ```bash
-NODE_OPTIONS=--max-old-space-size=200
+NODE_OPTIONS=--max-old-space-size=256
 ```
 
 ### Requerido
@@ -18,12 +18,12 @@ NODE_OPTIONS=--max-old-space-size=200
 - git >= **2.19.0**
 - node >= **18.14.0**
 - npm >= **9.3.1**
-- tmux >= **3.3a**
+- ripgrep >= **12.1.1**
 
 ### Sugerido
 
-- ripgrep >= **12.1.1**
 - fd-find >= **8.2.1**
+- tmux >= **3.3a**
 
 ### Opcional
 

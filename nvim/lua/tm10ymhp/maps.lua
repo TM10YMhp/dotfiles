@@ -4,6 +4,7 @@ vim.keymap.set('n', 'ZQ', '<nop>')
 vim.keymap.set('n', '<c-z>', '<nop>')
 
 vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]])
+vim.keymap.set('n', '<leader>q', ':%bw')
 
 local opts = { noremap = true, silent = true }
 
@@ -16,12 +17,10 @@ vim.keymap.set('i', '<up>', '<c-o>gk', opts)
 vim.keymap.set('i', '<down>', '<c-o>gj', opts)
 ]]
 
-vim.keymap.set('n', '<leader>q', '<cmd>%bw<cr>', opts)
-
 vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', opts)
 
-vim.keymap.set('n', '<leader>h', '<cmd>nohls<cr>', opts)
+vim.keymap.set('n', '<leader>h', '<cmd>set hls!<cr>', opts)
 vim.keymap.set('n', '<leader>o', '<cmd>set list!<cr>', opts)
 
 vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
