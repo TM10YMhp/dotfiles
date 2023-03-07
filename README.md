@@ -27,6 +27,6 @@ NODE_OPTIONS=--max-old-space-size=256
 
 ### Opcional
 
+- npm-check-updates
 - @mryhryki/markdown-preview
-- npm-check
 - commitizen
