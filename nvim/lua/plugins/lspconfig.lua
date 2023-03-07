@@ -84,7 +84,7 @@ return {
         },
       },
       settings = {
-        --completions = { completeFunctionCalls = true }
+        --completions = { completeFunctionCalls = true },
       }
     }
 
