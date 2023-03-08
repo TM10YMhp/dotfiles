@@ -14,9 +14,11 @@ return {
     vim.cmd[[hi HopNextKey1 NONE cterm=reverse,bold]]
     vim.cmd[[hi HopNextKey2 NONE cterm=reverse,bold]]
 
-    vim.keymap.set('n', 'f', hop.hint_char2, { remap = false })
-    vim.keymap.set('v', 'f', hop.hint_char2, { remap = false })
-    vim.keymap.set('n', 'F', hop.hint_words, { remap = false })
-    vim.keymap.set('v', 'F', hop.hint_words, { remap = false })
+    local opts = { remap = false }
+
+    vim.keymap.set('n', 'f', hop.hint_char2, opts)
+    vim.keymap.set('v', 'f', hop.hint_char2, opts)
+    vim.keymap.set('n', 'F', hop.hint_words, opts)
+    vim.keymap.set('v', 'F', hop.hint_words, opts)
   end
 }
