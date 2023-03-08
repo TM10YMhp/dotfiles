@@ -10,14 +10,15 @@ return {
       hi TelescopeSelection cterm='none'
     ]]
 
+    local telescope = require("telescope")
     local actions = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
     local action_state = require("telescope.actions.state")
 
-    require("telescope").setup({
+    telescope.setup({
       defaults = {
         color_devicons = false,
-        file_ignore_patterns = { "^.git/" },
+        file_ignore_patterns = { ".git" },
         vimgrep_arguments = {
           "rg",
           "--color=never",
@@ -30,7 +31,6 @@ return {
         },
         border = true,
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        --layout_strategy = "bottom_pane",
         sorting_strategy = "ascending",
         layout_config = {
           width = { 0.7, min = 90 },
@@ -64,16 +64,47 @@ return {
           hidden = true,
           --theme = "ivy",
         },
+        --current_buffer_fuzzy_find = {
+        --  sorter = require('telescope.sorters').get_substr_matcher({})
+        --}
       },
       extensions = {
         file_browser = {
           hidden = true,
-          --dir_icon = '',
           --git_status = false
         }
       }
     })
 
-    require("telescope").load_extension("file_browser")
+    telescope.load_extension("file_browser")
+
+    local builtin = require("telescope.builtin")
+    local opts = { noremap = true, silent = true }
+
+    --[[vim.keymap.set('n', '<leader>a', function()
+      builtin.current_buffer_fuzzy_find({
+        sorter = require('telescope.sorters').get_fuzzy_file({})
+      })
+    end, opts)]]
+
+    vim.keymap.set('n', '<leader>l', function()
+      builtin.live_grep({
+        search_dirs = { "%:p" },
+        path_display = "hidden"
+      })
+    end, opts)
+
+    vim.keymap.set('n', '<leader>t', function()
+      telescope.extensions.file_browser.file_browser()
+    end, opts)
+    vim.keymap.set('n', '<leader>c', function()
+      telescope.extensions.file_browser.file_browser({
+        path = "%:p:h"
+      })
+    end, opts)
+    vim.keymap.set('n', '<leader>f', builtin.find_files, opts)
+    vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+    vim.keymap.set('n', '<leader>g', builtin.live_grep, opts)
+    vim.keymap.set('n', '<leader>m', builtin.keymaps, opts)
   end
 }

@@ -44,6 +44,9 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      completion = {
+        completeopt = 'menu,menuone,noinsert'
+      },
       formatting = {
         --fields = { "abbr", "kind", "menu" },
         format = function(_, vim_item)
@@ -57,6 +60,12 @@ return {
       sorting = {
         comparators = {
           --cmp.config.compare.length,
+          cmp.config.compare.score,
+          --cmp.config.compare.recently_used,
+          --cmp.config.compare.offset,
+          --cmp.config.compare.exact,
+          --cmp.config.compare.kind,
+          --cmp.config.compare.order,
         },
       },
       mapping = cmp.mapping.preset.insert({
@@ -75,29 +84,21 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         },{
-        {
-          name = 'buffer',
-          --keyword_length = 3,
-        },
+        { name = 'buffer' },
       }),
-      --completion = {
-        --keyword_length = 1,
-        --autocomplete = false
-      --},
       window = {
         completion = { border = "single" },
-        --documentation = cmp.config.window.bordered()
         --documentation = cmp.config.disable
         documentation = {
           border = "single",
-        --  max_width = 45,
-        --  max_height = 25,
+          --max_width = 45,
+          --max_height = 25,
         }
       },
       performance = {
-        debounce = 100,
-        throttle = 100,
-        fetching_timeout = 100,
+        debounce = 150,
+        throttle = 150,
+        fetching_timeout = 150,
       },
       matching = {
         disallow_fuzzy_matching = true,

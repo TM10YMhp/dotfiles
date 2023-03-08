@@ -4,6 +4,9 @@ vim.opt.mouse = ""
 vim.opt.matchpairs = ""
 vim.opt.eventignore:append("CursorMovedI")
 
+vim.cmd('filetype plugin indent off')
+--vim.cmd('filetype indent on') --polyglot - equal sign(=)
+
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -12,15 +15,19 @@ vim.opt.shortmess:append("IF")
 
 vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
---vim.opt.wildmenu = false
+vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
+vim.opt.list = false
+vim.opt.listchars:append({
+  eol = '¬',
+  nbsp = '+',
+  space = ' ',
+  trail = '╱',
+  tab = '→ ',
+  extends = '»',
+  precedes = '«'
+})
 --vim.opt.fillchars = "lastline: "
---vim.opt.listchars:append({ eol = '$', extends = '>',precedes = '<' })
-
-vim.cmd('filetype plugin indent off')
---vim.cmd('filetype off')
---polyglot - equal sign(=)
---filetype indent on
 
 vim.opt.swapfile = false
 vim.opt.writebackup = false
@@ -36,7 +43,7 @@ vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 100
 
 vim.opt.title = false
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.number = true
@@ -44,6 +51,7 @@ vim.opt.showcmd = false
 vim.opt.showmode = false
 vim.opt.pumheight = 8
 vim.opt.cmdheight = 1
+vim.opt.ruler = false
 vim.opt.rulerformat = [[%l:%c%V|%L]]
 vim.opt.foldmethod = "manual"
 vim.opt.foldenable = false
@@ -74,7 +82,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.incsearch = true
 vim.opt.inccommand = ""
-vim.opt.synmaxcol = 120
+vim.opt.synmaxcol = 150
 vim.opt.belloff = "all"
 vim.opt.hlsearch = false
 vim.opt.cursorline = false
@@ -84,6 +92,4 @@ vim.opt.background = "dark"
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme custom')
-vim.cmd('hi Normal NONE')
-vim.cmd('hi NormalFloat cterm=NONE')
-vim.cmd([[match CursorColumn /\s\+$/]])
+vim.cmd([[match Error /\s\+$/]])

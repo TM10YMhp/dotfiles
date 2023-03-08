@@ -29,5 +29,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 
 vim.diagnostic.config{
-  float = { border = "single" }
+  float = {
+    border = "single",
+    source = "always",
+  }
 }
