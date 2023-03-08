@@ -75,3 +75,9 @@ hi DiffDelete NONE ctermfg=1
 hi DiffAdd    NONE ctermfg=2
 hi DiffChange NONE ctermfg=3
 hi DiffText NONE ctermfg=3 cterm=underline
+
+hi DiagnosticError NONE
+hi DiagnosticWarn  NONE
+hi DiagnosticInfo  NONE
+hi DiagnosticHint  NONE
+hi DiagnosticOk    NONE
