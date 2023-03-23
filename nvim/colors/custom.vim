@@ -8,8 +8,8 @@ endif
 let colors_name = "custom"
 
 hi Normal           NONE
-"hi NormalFloat      NONE
-"hi NonText          NONE
+hi NormalFloat      NONE
+hi NonText          NONE
 hi Comment          NONE cterm=italic
 
 hi Conceal          NONE cterm=underline
@@ -35,8 +35,7 @@ hi StatusLineTermNC NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
-hi ErrorMsg NONE
-hi! link ErrorMsg Error
+"hi ErrorMsg NONE
 
 hi IncSearch        NONE cterm=reverse
 hi Search           NONE cterm=reverse
@@ -70,6 +69,7 @@ hi SignColumn  NONE
 hi MatchParen  NONE cterm=reverse
 hi Title       NONE
 hi Directory   NONE
+hi SpecialKey  NONE
 
 hi DiffDelete NONE ctermfg=1
 hi DiffAdd    NONE ctermfg=2
