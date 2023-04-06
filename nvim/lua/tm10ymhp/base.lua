@@ -3,6 +3,7 @@ vim.cmd("autocmd!")
 vim.opt.mouse = ""
 vim.opt.matchpairs = ""
 vim.opt.eventignore:append("CursorMovedI")
+vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
 
 vim.cmd('filetype plugin indent off')
 --vim.cmd('filetype indent on') --polyglot - equal sign(=)

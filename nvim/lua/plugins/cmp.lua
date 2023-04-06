@@ -69,8 +69,7 @@ return {
         },
       },
       mapping = cmp.mapping.preset.insert({
-        --['<C-Space>'] = cmp.mapping.complete(),
-        --['<BS>'] = cmp.mapping.close(),
+        --['<C-e>'] = cmp.mapping.close(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -89,12 +88,9 @@ return {
       window = {
         completion = { border = "single" },
         --documentation = cmp.config.disable
-        documentation = {
-          border = "single",
-          --max_width = 45,
-          --max_height = 25,
-        }
+        documentation = { border = "single" }
       },
+      completion = { autocomplete = false },
       performance = {
         debounce = 150,
         throttle = 150,
