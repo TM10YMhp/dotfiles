@@ -133,6 +133,34 @@ return {
       root_dir = lspconfig.util.root_pattern(
         ".git", "mvnw", "gradlew", "pom.xml", "build.gradle"
       ),
+      settings = {
+        java = {
+          configuration = {
+            updateBuildConfiguration = "disabled",
+            maven = { userSettings = null }
+          },
+          errors = { incompleteClasspath = { severity = "warning" } },
+          trace = { server = "off" },
+          import = {
+            gradle = { enabled = true },
+            maven = { enabled = true },
+            exclusions = {
+              "**/node_modules/**",
+              "**/.metadata/**",
+              "**/archetype-resources/**",
+              "**/META-INF/maven/**",
+              "/**/test/**"
+            }
+          },
+          referencesCodeLens = { enabled = false },
+          signatureHelp = { enabled = false },
+          implementationsCodeLens = { enabled = false },
+          format = { enabled = true },
+          saveActions = { organizeImports = false },
+          contentProvider = { preferred = null },
+          autobuild = { enabled = false },
+        }
+      }
     }
 
     --[[lspconfig.tailwindcss.setup{

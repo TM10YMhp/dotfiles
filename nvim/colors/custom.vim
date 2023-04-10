@@ -12,6 +12,15 @@ hi NormalFloat      NONE
 hi NonText          NONE
 hi Comment          NONE cterm=italic
 
+if has("win32")
+  hi Comment NONE ctermfg=gray
+endif
+
+hi TabLine     NONE
+hi! link TabLine Comment
+hi TabLineSel  NONE
+hi TabLineFill NONE
+
 hi Conceal          NONE cterm=underline
 
 hi Constant         NONE
@@ -27,15 +36,14 @@ hi Todo             NONE
 
 hi WildMenu         NONE
 
-hi StatusLine       NONE cterm=bold
-hi StatusLineNC     NONE cterm=italic
+hi StatusLine       NONE
+hi StatusLineNC     NONE
+hi! link StatusLineNC Comment
 
 hi StatusLineTerm   NONE
 hi StatusLineTermNC NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
-
-"hi ErrorMsg NONE
 
 hi IncSearch        NONE cterm=reverse
 hi Search           NONE cterm=reverse
@@ -51,10 +59,6 @@ hi! link Folded     LineNr
 
 hi Visual      NONE cterm=reverse
 hi! link VisualNOS Visual
-
-hi TabLine     NONE cterm=italic
-hi TabLineSel  NONE cterm=bold
-hi TabLineFill NONE
 
 hi Pmenu       NONE
 hi PmenuSel    NONE cterm=reverse
