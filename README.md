@@ -30,3 +30,9 @@ NODE_OPTIONS=--max-old-space-size=256
 - npm-check-updates
 - @mryhryki/markdown-preview
 - commitizen
+
+### Configuraciones para Windows
+Necesitaras clink para el autocompletado y el prompt.
+Las configuraciones de clink y neovim deben colocarse en `appdata/local`.
+Para que los comandos de unix funcionen en windows necesitaras de [w64devkit](https://github.com/skeeto/w64devkit).
+Si necesitas mas sutocompletados puedes buscar en [clink-completions](https://github.com/vladimir-kotikov/clink-completions).
