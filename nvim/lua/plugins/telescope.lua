@@ -18,7 +18,7 @@ return {
     telescope.setup({
       defaults = {
         color_devicons = false,
-        file_ignore_patterns = { ".git" },
+        file_ignore_patterns = { ".git", ".class" },
         vimgrep_arguments = {
           "rg",
           "--color=never",

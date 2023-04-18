@@ -20,19 +20,32 @@ NODE_OPTIONS=--max-old-space-size=256
 - npm >= **9.3.1**
 - ripgrep >= **12.1.1**
 
-### Sugerido
+### Opcional
 
 - fd-find >= **8.2.1**
 - tmux >= **3.3a**
-
-### Opcional
-
 - npm-check-updates
 - @mryhryki/markdown-preview
 - commitizen
 
+### JDTLS
+
+Necesitaras jdk 17 o superior para que funcione correctamente.
+
+Se recomienda configurar lo siguiente:
+
+```bash
+JAVA_TOOL_OPTIONS=-Dfile.enconding=UTF-8
+```
+
 ### Configuraciones para Windows
+
+Se recomienda usar la fuente Menlo al usar CMD.
+
 Necesitaras clink para el autocompletado y el prompt.
+
 Las configuraciones de clink y neovim deben colocarse en `appdata/local`.
+
 Para que los comandos de unix funcionen en windows necesitaras de [w64devkit](https://github.com/skeeto/w64devkit).
+
 Si necesitas mas sutocompletados puedes buscar en [clink-completions](https://github.com/vladimir-kotikov/clink-completions).
