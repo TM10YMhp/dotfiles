@@ -70,6 +70,13 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         --['<C-e>'] = cmp.mapping.close(),
+        ['<C-s>'] = cmp.mapping.complete({
+          config = {
+            sources = {
+              { name = 'buffer' }
+            }
+          }
+        }),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),

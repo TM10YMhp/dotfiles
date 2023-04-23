@@ -71,6 +71,7 @@ return {
       extensions = {
         file_browser = {
           hidden = true,
+          file_ignore_patterns = {},
           --git_status = false
         }
       }
