@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     require('Comment').setup({
-      padding = false,
+      padding = true,
       sticky = true,
       ignore = nil,
       toggler = {

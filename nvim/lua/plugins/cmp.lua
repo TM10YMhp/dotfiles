@@ -61,7 +61,7 @@ return {
         comparators = {
           --cmp.config.compare.length,
           cmp.config.compare.score,
-          --cmp.config.compare.recently_used,
+          cmp.config.compare.recently_used,
           --cmp.config.compare.offset,
           --cmp.config.compare.exact,
           --cmp.config.compare.kind,

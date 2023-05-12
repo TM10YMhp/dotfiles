@@ -7,7 +7,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "nvim-lua/lsp-status.nvim"
   },
-  config = function ()
+  config = function()
     require("mason").setup({
       ui = {
         check_outdated_packages_on_open = false,
@@ -88,19 +88,25 @@ return {
       }
     }
 
-    lspconfig.astro.setup{
+    lspconfig.pyright.setup{
       autostart = false,
       capabilities = capabilities,
-    }
-
-    lspconfig.rust_analyzer.setup{
-      autostart = false,
-      capabilities = capabilities,
-    }
-
-    lspconfig.clangd.setup{
-      autostart = false,
-      capabilities = capabilities,
+      root_dir = function(fname)
+        return lspconfig.util.root_pattern(
+          ".git", "setup.py", "setup.cfg", "pyproject.toml", "requeriments.txt"
+        )(fname) or lspconfig.util.path.dirname(fname)
+      end,
+      settings = {
+        python = {
+          analysis = {
+            autoImportCompletions = true,
+            autoSearchPaths = true,
+            --diagnosticMode = "openFilesOnly"
+            --typeCheckingMode = "off"
+            useLibraryCodeForTypes = true,
+          }
+        }
+      }
     }
 
     local jdtls_path = vim.fn.stdpath('data') .. "/mason/packages/jdtls"
@@ -161,6 +167,21 @@ return {
           autobuild = { enabled = false },
         }
       }
+    }
+
+    lspconfig.astro.setup{
+      autostart = false,
+      capabilities = capabilities,
+    }
+
+    lspconfig.rust_analyzer.setup{
+      autostart = false,
+      capabilities = capabilities,
+    }
+
+    lspconfig.clangd.setup{
+      autostart = false,
+      capabilities = capabilities,
     }
 
     --[[lspconfig.tailwindcss.setup{

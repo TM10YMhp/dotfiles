@@ -5,8 +5,20 @@ return {
     init = function()
       vim.g.buftabline_show = 2
       vim.g.buftabline_separators = 0
-      vim.g.buftabline_numbers = 1
-      vim.g.buftabline_plug_max = 0
+      vim.g.buftabline_numbers = 2
+      vim.g.buftabline_plug_max = 10
+
+      local opts = { noremap = true }
+      vim.keymap.set('n', '<leader>1', '<Plug>BufTabLine.Go(1)<cr>', opts)
+      vim.keymap.set('n', '<leader>2', '<Plug>BufTabLine.Go(2)<cr>', opts)
+      vim.keymap.set('n', '<leader>3', '<Plug>BufTabLine.Go(3)<cr>', opts)
+      vim.keymap.set('n', '<leader>4', '<Plug>BufTabLine.Go(4)<cr>', opts)
+      vim.keymap.set('n', '<leader>5', '<Plug>BufTabLine.Go(5)<cr>', opts)
+      vim.keymap.set('n', '<leader>6', '<Plug>BufTabLine.Go(6)<cr>', opts)
+      vim.keymap.set('n', '<leader>6', '<Plug>BufTabLine.Go(7)<cr>', opts)
+      vim.keymap.set('n', '<leader>8', '<Plug>BufTabLine.Go(8)<cr>', opts)
+      vim.keymap.set('n', '<leader>9', '<Plug>BufTabLine.Go(9)<cr>', opts)
+      vim.keymap.set('n', '<leader>0', '<Plug>BufTabLine.Go(10)<cr>', opts)
     end
   },
   {
