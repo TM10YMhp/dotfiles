@@ -15,7 +15,7 @@ return {
       vim.keymap.set('n', '<leader>4', '<Plug>BufTabLine.Go(4)<cr>', opts)
       vim.keymap.set('n', '<leader>5', '<Plug>BufTabLine.Go(5)<cr>', opts)
       vim.keymap.set('n', '<leader>6', '<Plug>BufTabLine.Go(6)<cr>', opts)
-      vim.keymap.set('n', '<leader>6', '<Plug>BufTabLine.Go(7)<cr>', opts)
+      vim.keymap.set('n', '<leader>7', '<Plug>BufTabLine.Go(7)<cr>', opts)
       vim.keymap.set('n', '<leader>8', '<Plug>BufTabLine.Go(8)<cr>', opts)
       vim.keymap.set('n', '<leader>9', '<Plug>BufTabLine.Go(9)<cr>', opts)
       vim.keymap.set('n', '<leader>0', '<Plug>BufTabLine.Go(10)<cr>', opts)

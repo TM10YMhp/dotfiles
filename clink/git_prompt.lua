@@ -1,5 +1,5 @@
 function set_prompt()
-  local current_date = os.date("%d%H%M|%S")
+  local current_date = os.date("%y.%m%d.%H%M|%S")
   local format_date = "["..current_date.."] "
   local user_home = clink.get_env("USERPROFILE")
   local current_directory = clink.get_cwd()

@@ -26,6 +26,7 @@ return {
     vim.keymap.set('n', [[\s]], ':LspStart')
     vim.keymap.set('n', [[\r]], ':LspRestart')
     vim.keymap.set('n', [[\i]], ':LspInfo')
+    vim.keymap.set('n', [[\l]], ':LspLog')
 
     local lsp_status = require('lsp-status')
     lsp_status.register_progress()

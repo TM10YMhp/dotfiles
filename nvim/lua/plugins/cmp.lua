@@ -45,7 +45,7 @@ return {
         end,
       },
       completion = {
-        completeopt = 'menu,menuone,noinsert'
+        completeopt = 'menu,menuone,noinsert,noselect'
       },
       formatting = {
         --fields = { "abbr", "kind", "menu" },
