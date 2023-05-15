@@ -28,7 +28,7 @@ vim.opt.listchars:append({
   extends = '»',
   precedes = '«'
 })
---vim.opt.fillchars = "lastline: "
+vim.opt.fillchars = "fold: "
 
 vim.opt.swapfile = false
 vim.opt.writebackup = false
@@ -56,6 +56,7 @@ vim.opt.ruler = false
 vim.opt.rulerformat = [[%l:%c%V|%L]]
 vim.opt.foldmethod = "manual"
 vim.opt.foldenable = false
+vim.opt.foldopen:remove("hor")
 vim.opt.complete = "."
 --vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
 vim.opt.completeopt = "menu"
