@@ -2,8 +2,13 @@ vim.cmd("autocmd!")
 
 vim.opt.mouse = ""
 vim.opt.matchpairs = ""
-vim.opt.eventignore:append("CursorMovedI")
-vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
+
+if vim.fn.has('clipboard') == 1 then
+  vim.opt.clipboard:prepend {
+    "unnamed",
+    "unnamedplus"
+  }
+end
 
 vim.cmd('filetype plugin indent off')
 --vim.cmd('filetype indent on') --polyglot - equal sign(=)
@@ -50,16 +55,26 @@ vim.opt.sidescrolloff = 10
 vim.opt.number = true
 vim.opt.showcmd = false
 vim.opt.showmode = false
-vim.opt.pumheight = 0
+vim.opt.pumheight = 12
 vim.opt.cmdheight = 1
-vim.opt.ruler = false
 vim.opt.rulerformat = [[%l:%c%V|%L]]
-vim.opt.foldmethod = "manual"
+vim.opt.ruler = false
+
+custom_fold_text = function()
+  local line = vim.fn.getline(vim.v.foldstart)
+  local line_count = vim.v.foldend - vim.v.foldstart +1
+  local _, i = string.find(line, '%S')
+  local fill_char = " "
+  return fill_char:rep(i-1) .. "... (" .. line_count .. ")"
+end
+vim.opt.foldtext = 'v:lua.custom_fold_text()'
+vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
+vim.opt.foldlevel = 99
 vim.opt.foldopen:remove("hor")
+
 vim.opt.complete = "."
---vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"
-vim.opt.completeopt = "menu"
+vim.opt.completeopt = "menu,menuone,noinsert,noselect"
 vim.opt.hidden = false
 
 vim.opt.cindent = false

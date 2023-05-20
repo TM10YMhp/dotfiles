@@ -9,6 +9,7 @@ let colors_name = "custom"
 
 hi Normal           NONE
 hi NormalFloat      NONE
+hi! link NormalFloat Normal
 hi NonText          NONE
 hi Comment          NONE cterm=italic
 
@@ -60,8 +61,8 @@ hi! link Folded     LineNr
 hi Visual      NONE cterm=reverse
 hi! link VisualNOS Visual
 
-hi Pmenu       NONE
-hi PmenuSel    NONE cterm=reverse
+hi Pmenu       NONE cterm=reverse,bold
+hi PmenuSel    NONE
 hi PmenuSbar   NONE
 hi PmenuThumb  NONE cterm=reverse
 

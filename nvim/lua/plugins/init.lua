@@ -1,7 +1,7 @@
 return {
   {
     "ap/vim-buftabline",
-    lazy = false,
+    event = { "BufReadPre", "BufNewFile" },
     init = function()
       vim.g.buftabline_show = 2
       vim.g.buftabline_separators = 0

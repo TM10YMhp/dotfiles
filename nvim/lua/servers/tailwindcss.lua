@@ -6,7 +6,7 @@ return {
       settings = {
         tailwindCSS = {
           hovers = true,
-          suggestions = false,
+          suggestions = true,
           emmetCompletions = false,
           colorDecorators = false,
           codeActions = false,

@@ -1,5 +1,4 @@
 require("lsp.mason")
-require("lsp.lsp_status")
 
 local lspconfig = require("lspconfig")
 
@@ -9,9 +8,10 @@ require('lspconfig.ui.windows').default_options = {
 
 local defaults = {
   autostart = false,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
-  on_attach = function()
-    local opts = { noremap = true, silent = true }
+  on_attach = function(client, bufnr)
+    local opts = { noremap = true, silent = true, buffer = bufnr }
+
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, opts)
