@@ -76,10 +76,10 @@ hi Title       NONE
 hi Directory   NONE
 hi SpecialKey  NONE
 
-hi DiffDelete NONE ctermfg=1
-hi DiffAdd    NONE ctermfg=2
-hi DiffChange NONE ctermfg=3
-hi DiffText NONE ctermfg=3 cterm=underline
+hi DiffDelete NONE ctermfg=red
+hi DiffAdd    NONE ctermfg=green
+hi DiffChange NONE ctermfg=yellow
+hi DiffText   NONE ctermfg=cyan
 
 hi DiagnosticError NONE
 hi DiagnosticWarn  NONE

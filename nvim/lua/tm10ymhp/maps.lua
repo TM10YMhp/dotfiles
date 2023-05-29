@@ -18,6 +18,11 @@ vim.keymap.set('i', '<up>', '<c-o>gk', opts)
 vim.keymap.set('i', '<down>', '<c-o>gj', opts)
 ]]
 
+vim.keymap.set('n', '<c-k>', '<c-w>-', opts)
+vim.keymap.set('n', '<c-j>', '<c-w>+', opts)
+vim.keymap.set('n', '<c-l>', '<c-w>>', opts)
+vim.keymap.set('n', '<c-h>', '<c-w><', opts)
+
 vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', opts)
 

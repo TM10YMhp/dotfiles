@@ -18,6 +18,7 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.compatible = false
 vim.opt.shortmess:append("IF")
+vim.opt.diffopt:append("horizontal,foldcolumn:0")
 
 vim.opt.formatoptions = "cqj"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
