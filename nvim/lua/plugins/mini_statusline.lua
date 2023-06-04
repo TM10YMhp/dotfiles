@@ -21,7 +21,8 @@ return {
       content = {
         active = custom_statusline,
       },
-      use_icons = false
+      use_icons = false,
+      set_vim_settings = false
     })
   end
 }

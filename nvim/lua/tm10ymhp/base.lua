@@ -4,10 +4,7 @@ vim.opt.mouse = ""
 vim.opt.matchpairs = ""
 
 if vim.fn.has('clipboard') == 1 then
-  vim.opt.clipboard:prepend {
-    "unnamed",
-    "unnamedplus"
-  }
+  vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
 end
 
 vim.cmd('filetype plugin indent off')

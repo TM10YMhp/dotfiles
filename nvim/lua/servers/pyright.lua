@@ -15,8 +15,8 @@ return {
           analysis = {
             autoImportCompletions = true,
             autoSearchPaths = true,
-            --diagnosticMode = "openFilesOnly"
-            --typeCheckingMode = "off"
+            --diagnosticMode = "openFilesOnly",
+            --typeCheckingMode = "off",
             useLibraryCodeForTypes = true,
           }
         }
