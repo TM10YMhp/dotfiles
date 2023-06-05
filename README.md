@@ -40,7 +40,8 @@ JAVA_TOOL_OPTIONS=-Dfile.enconding=UTF-8
 
 ### Configuraciones para Windows
 
-Se recomienda usar la fuente Menlo al usar CMD.
+Posiblemente necesitaras descargar una fuente para que algunos plugins de neovim
+se muestren correctamente. Puedes probar la fuente Menlo o Meslo, o cualquier otra fuente.
 
 Necesitaras clink para el autocompletado y el prompt.
 
