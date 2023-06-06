@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.statusline",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "BufEnter",
   config = function()
     local MiniStatusline = require("mini.statusline")
     function custom_statusline()

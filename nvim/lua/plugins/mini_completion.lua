@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.completion",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "InsertEnter",
   config = function()
     local opts = { expr = true }
     local keys = {

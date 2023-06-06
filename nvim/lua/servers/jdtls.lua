@@ -1,7 +1,14 @@
 local jdtls_path = vim.fn.stdpath('data') .. "/mason/packages/jdtls"
 local workspace_path = vim.fn.stdpath('data') .. '/.cache/jdtls/workspace/'
 
-local path_to_lsp_server = jdtls_path .. "/config_win"
+local os = "linux"
+if vim.fn.has("win32") == 1 then
+  os = "win"
+elseif vim.fn.has("mac") == 1 then
+  os = "mac"
+end
+
+local path_to_lsp_server = jdtls_path .. "/config_" .. os
 local path_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')

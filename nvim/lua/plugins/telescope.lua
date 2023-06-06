@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  event = "VeryLazy",
+  event = "BufEnter",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -29,7 +29,7 @@ return {
         },
         layout_config = {
           width = { 0.7, min = 90 },
-          height = 30,
+          height = { 0.9, max = 30 },
           preview_cutoff = 0,
           prompt_position = "top",
           horizontal = {
@@ -68,10 +68,10 @@ return {
           preview = { hide_on_startup = false }
         },
         lsp_definitions = {
-          layout_strategy = 'cursor',
-          jump_type = 'never',
           path_display = { tail = true },
-          preview = { hide_on_startup = false }
+          preview = { hide_on_startup = false },
+          jump_type = 'never',
+          show_line = false,
         },
         --current_buffer_fuzzy_find = {
         --  sorter = require('telescope.sorters').get_substr_matcher({})
@@ -81,6 +81,7 @@ return {
       extensions = {
         file_browser = {
           hidden = true,
+          hijack_netrw = true,
           file_ignore_patterns = nil,
         }
       }
