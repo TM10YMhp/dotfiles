@@ -14,7 +14,7 @@ NODE_OPTIONS=--max-old-space-size=256
 
 ### Requerido
 
-- neovim >= **0.8.0**
+- neovim >= **0.9.1**
 - git >= **2.19.0**
 - node >= **18.14.0**
 - npm >= **9.3.1**
