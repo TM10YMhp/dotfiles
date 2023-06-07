@@ -73,6 +73,7 @@ return {
           jump_type = 'never',
           show_line = false,
         },
+        colorscheme = { enable_preview = true },
         --current_buffer_fuzzy_find = {
         --  sorter = require('telescope.sorters').get_substr_matcher({})
         --  sorter = require('telescope.sorters').get_fuzzy_file({})
@@ -101,14 +102,14 @@ return {
 
     vim.keymap.set('n', '<leader>c', function()
       telescope.extensions.file_browser.file_browser({ path = "%:p:h" })
-    end, set_desc('file_browser in current path'))
+    end, set_desc('file_browser (cwd)'))
 
     vim.keymap.set('n', '<leader>l', function()
       builtin.live_grep({
         search_dirs = { "%:p" },
         path_display = "hidden"
       })
-    end, set_desc('live_grep in current file'))
+    end, set_desc('live_grep (cwd)'))
 
     vim.keymap.set('n', '<leader>m', function()
       builtin.keymaps({
@@ -116,6 +117,8 @@ return {
         layout_config = { width = 75 }
       })
     end, set_desc('keymaps'))
+
+    vim.keymap.set('n', '<leader>i', builtin.colorscheme, set_desc('colorscheme preview'))
 
     vim.keymap.set('n', '<leader>f', builtin.find_files, set_desc('find_files'))
     vim.keymap.set('n', '<leader>b', builtin.buffers, set_desc('buffers'))
