@@ -29,11 +29,15 @@ return {
         },
         layout_config = {
           width = { 0.7, min = 90 },
-          height = { 0.9, max = 30 },
+          height = 35,
           preview_cutoff = 0,
           prompt_position = "top",
           horizontal = {
             preview_width = 0.6,
+          },
+          vertical = {
+            preview_height = 0.6,
+            mirror = true
           }
         },
         vimgrep_arguments = {
@@ -63,21 +67,21 @@ return {
         },
         diagnostics = {
           layout_strategy = 'vertical',
-          layout_config = { mirror = true },
           path_display = { tail = true },
           preview = { hide_on_startup = false }
         },
         lsp_definitions = {
+          layout_strategy = 'vertical',
           path_display = { tail = true },
           preview = { hide_on_startup = false },
           jump_type = 'never',
           show_line = false,
         },
         colorscheme = { enable_preview = true },
-        --current_buffer_fuzzy_find = {
-        --  sorter = require('telescope.sorters').get_substr_matcher({})
-        --  sorter = require('telescope.sorters').get_fuzzy_file({})
-        --}
+        current_buffer_fuzzy_find = {
+          -- sorter = require('telescope.sorters').get_substr_matcher({})
+          -- sorter = require('telescope.sorters').get_fuzzy_file({})
+        }
       },
       extensions = {
         file_browser = {
@@ -107,6 +111,7 @@ return {
     vim.keymap.set('n', '<leader>l', function()
       builtin.live_grep({
         search_dirs = { "%:p" },
+        disable_coordinates = true,
         path_display = "hidden"
       })
     end, set_desc('live_grep (cwd)'))
