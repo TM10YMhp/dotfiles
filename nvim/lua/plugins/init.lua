@@ -32,21 +32,6 @@ return {
       vim.g.floaterm_keymap_prev = '<s-b>p'
       vim.g.floaterm_keymap_next = '<s-b>n'
       vim.g.floaterm_keymap_toggle = '<s-b>h'
-
-      vim.keymap.set('n', '<s-b>"',
-        '<cmd>FloatermNew --wintype=split --height=0.35<cr>',
-        { noremap = true }
-      )
-    end
-  },
-  {
-    "unblevable/quick-scope",
-    event = "VeryLazy",
-    init = function()
-      vim.g.qs_highlight_on_keys = { "f", "F", "t", "T"}
-      vim.g.qs_lazy_highlight = 1
-      vim.cmd[[hi QuickScopePrimary ctermfg=green]]
-      vim.cmd[[hi QuickScopeSecondary ctermfg=cyan]]
     end
   },
   {
