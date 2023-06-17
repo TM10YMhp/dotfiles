@@ -1,4 +1,4 @@
-vim.keymap.set('n', 'Z', '<nop>')
+-- vim.keymap.set('n', 'Z', '<nop>')
 vim.keymap.set('n', 'ZZ', '<nop>')
 vim.keymap.set('n', 'ZQ', '<nop>')
 vim.keymap.set('n', '<c-z>', '<nop>')
@@ -26,8 +26,8 @@ vim.keymap.set('n', '<c-h>', '<c-w><', opts)
 vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', opts)
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', opts)
 
-vim.keymap.set('n', '<leader>h', '<cmd>set hls!<cr>',
-  vim.tbl_extend('force', opts, { desc = 'toogle highlight search' })
+vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>',
+  vim.tbl_extend('force', opts, { desc = 'no highlight search' })
 )
 vim.keymap.set('n', '<leader>o', '<cmd>set list!<cr>',
   vim.tbl_extend('force', opts, { desc = 'toogle list mode' })

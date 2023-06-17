@@ -46,7 +46,7 @@ hi StatusLineTermNC NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
-hi IncSearch        NONE cterm=reverse
+hi IncSearch        NONE ctermfg=green
 hi Search           NONE cterm=reverse
 
 hi LineNr           NONE

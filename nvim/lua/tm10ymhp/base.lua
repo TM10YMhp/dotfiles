@@ -1,7 +1,6 @@
 vim.cmd("autocmd!")
 
 vim.opt.mouse = ""
-vim.opt.matchpairs = ""
 
 if vim.fn.has('clipboard') == 1 then
   vim.opt.clipboard:prepend { "unnamed", "unnamedplus" }
@@ -17,7 +16,7 @@ vim.opt.compatible = false
 vim.opt.shortmess:append("IF")
 vim.opt.diffopt:append("horizontal,foldcolumn:0")
 
-vim.opt.formatoptions = "cqj"
+vim.opt.formatoptions = "cqjw"
 vim.opt.wildignore:append({ '**/node_modules/**', '**/.git/**' })
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
@@ -99,7 +98,7 @@ vim.opt.incsearch = true
 vim.opt.inccommand = ""
 vim.opt.synmaxcol = 150
 vim.opt.belloff = "all"
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.cursorline = false
 vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = false

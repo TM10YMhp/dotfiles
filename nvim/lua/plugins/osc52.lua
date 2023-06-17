@@ -17,6 +17,6 @@ return {
       silent = false, --Disable message on successful copy
       trim = false,   --Trim text before copy
     }
-    vim.keymap.set('x', '%', osc52.copy_visual)
+    vim.keymap.set('x', '<leader>y', osc52.copy_visual)
   end
 }

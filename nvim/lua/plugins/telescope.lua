@@ -119,7 +119,8 @@ return {
     vim.keymap.set('n', '<leader>m', function()
       builtin.keymaps({
         show_plug = false,
-        layout_config = { width = 75 }
+        layout_config = { width = 75 },
+        modes = { "n", "i", "c", "x", "o", }
       })
     end, set_desc('keymaps'))
 
