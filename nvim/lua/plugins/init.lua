@@ -19,7 +19,7 @@ return {
       vim.g.buftabline_show = 2
       vim.g.buftabline_separators = 0
       vim.g.buftabline_numbers = 2
-      vim.g.buftabline_plug_max = 10
+      vim.g.buftabline_plug_max = 9
 
       vim.keymap.set('n', '<leader>1', '<Plug>BufTabLine.Go(1)')
       vim.keymap.set('n', '<leader>2', '<Plug>BufTabLine.Go(2)')
@@ -30,7 +30,6 @@ return {
       vim.keymap.set('n', '<leader>7', '<Plug>BufTabLine.Go(7)')
       vim.keymap.set('n', '<leader>8', '<Plug>BufTabLine.Go(8)')
       vim.keymap.set('n', '<leader>9', '<Plug>BufTabLine.Go(9)')
-      vim.keymap.set('n', '<leader>0', '<Plug>BufTabLine.Go(10)')
     end
   },
   {
@@ -52,15 +51,15 @@ return {
     init = function()
       vim.g.sandwich_no_default_key_mappings = 1
 
-      vim.keymap.set({ 'n', 'x', 'o' }, 'ga', '<Plug>(sandwich-add)')
-      vim.keymap.set({ 'n', 'x' }, 'gd', '<Plug>(sandwich-delete)')
-      vim.keymap.set({ 'n', 'x' }, 'gr', '<Plug>(sandwich-replace)')
+      vim.keymap.set({ 'n', 'x', 'o' }, '<leader>sa', '<Plug>(sandwich-add)')
+      vim.keymap.set({ 'n', 'x' }, '<leader>sd', '<Plug>(sandwich-delete)')
+      vim.keymap.set({ 'n', 'x' }, '<leader>sr', '<Plug>(sandwich-replace)')
       vim.keymap.set({ 'x', 'o' }, 'ab', '<Plug>(textobj-sandwich-auto-a)')
       vim.keymap.set({ 'x', 'o' }, 'ib', '<Plug>(textobj-sandwich-auto-i)')
       vim.keymap.set({ 'x', 'o' }, 'as', '<Plug>(textobj-sandwich-query-a)')
       vim.keymap.set({ 'x', 'o' }, 'is', '<Plug>(textobj-sandwich-query-i)')
-      vim.keymap.set('n', 'gdb', '<Plug>(sandwich-delete-auto)')
-      vim.keymap.set('n', 'grb', '<Plug>(sandwich-replace-auto)')
+      vim.keymap.set('n', '<leader>sdb', '<Plug>(sandwich-delete-auto)')
+      vim.keymap.set('n', '<leader>srb', '<Plug>(sandwich-replace-auto)')
     end
   },
 }

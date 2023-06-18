@@ -46,8 +46,8 @@ hi StatusLineTermNC NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
-hi IncSearch        NONE ctermfg=green
-hi Search           NONE cterm=reverse
+hi IncSearch        NONE ctermfg=darkyellow cterm=reverse
+hi Search           NONE ctermfg=white cterm=reverse
 
 hi LineNr           NONE
 hi CursorLineNr     NONE cterm=reverse
@@ -61,10 +61,10 @@ hi! link Folded     LineNr
 hi Visual      NONE cterm=reverse
 hi! link VisualNOS Visual
 
-hi Pmenu       NONE cterm=reverse,bold
+hi Pmenu       NONE ctermfg=white cterm=reverse
 hi PmenuSel    NONE
 hi PmenuSbar   NONE
-hi PmenuThumb  NONE cterm=reverse
+hi PmenuThumb  NONE ctermbg=white
 
 hi! link BufTabLineActive TabLineSel
 
@@ -76,10 +76,10 @@ hi Title       NONE
 hi Directory   NONE
 hi SpecialKey  NONE
 
-hi DiffDelete NONE ctermfg=red
-hi DiffAdd    NONE ctermfg=green
-hi DiffChange NONE ctermfg=yellow
-hi DiffText   NONE ctermfg=cyan
+hi DiffDelete NONE ctermfg=red cterm=reverse
+hi DiffAdd    NONE ctermfg=green cterm=reverse
+hi DiffChange NONE ctermfg=yellow cterm=reverse
+hi DiffText   NONE ctermfg=cyan cterm=reverse
 
 hi DiagnosticError NONE
 hi DiagnosticWarn  NONE

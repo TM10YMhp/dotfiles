@@ -2,8 +2,8 @@ require("mason").setup({
   ui = {
     check_outdated_packages_on_open = false,
     border = "single",
-    width = 0.8,
-    height = 30,
+    width = 90,
+    height = 40,
     icons = {
       package_installed = "●",
       package_pending = "-",

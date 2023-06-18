@@ -29,7 +29,7 @@ return {
         },
         layout_config = {
           width = { 0.7, min = 90 },
-          height = 35,
+          height = 40,
           preview_cutoff = 0,
           prompt_position = "top",
           horizontal = {
@@ -95,44 +95,52 @@ return {
     telescope.load_extension("file_browser")
 
     local builtin = require("telescope.builtin")
-    local opts = { noremap = true, silent = true }
-    local function set_desc(desc)
-      return vim.tbl_extend('force', opts, { desc = desc })
-    end
 
     vim.keymap.set('n', '<leader>t', function()
       telescope.extensions.file_browser.file_browser()
-    end, set_desc('file_browser'))
+    end, { desc = 'file_browser', noremap = true })
 
-    vim.keymap.set('n', '<leader>c', function()
+    vim.keymap.set('n', '<leader>T', function()
       telescope.extensions.file_browser.file_browser({ path = "%:p:h" })
-    end, set_desc('file_browser (cwd)'))
+    end, { desc = 'file_browser (cwd)', noremap = true })
 
-    vim.keymap.set('n', '<leader>l', function()
+    vim.keymap.set('n', '<leader>G', function()
       builtin.live_grep({
         search_dirs = { "%:p" },
         disable_coordinates = true,
         path_display = "hidden"
       })
-    end, set_desc('live_grep (cwd)'))
+    end, { desc = 'live_grep (cwd)', noremap = true })
 
-    vim.keymap.set('n', '<leader>m', function()
+    vim.keymap.set('n', '<leader>k', function()
       builtin.keymaps({
         show_plug = false,
         layout_config = { width = 75 },
         modes = { "n", "i", "c", "x", "o", }
       })
-    end, set_desc('keymaps'))
+    end, { desc = 'keymaps', noremap = true })
 
-    vim.keymap.set('n', '<leader>i', builtin.colorscheme, set_desc('colorscheme preview'))
+    vim.keymap.set('n', '<leader>C', builtin.colorscheme, {
+      desc = 'colorscheme preview', noremap = true
+    })
+    vim.keymap.set('n', '<leader>f', builtin.find_files, {
+      desc = 'find_files', noremap = true
+    })
+    vim.keymap.set('n', '<leader>b', builtin.buffers, {
+      desc = 'buffers', noremap = true
+    })
+    vim.keymap.set('n', '<leader>g', builtin.live_grep, {
+      desc = 'live_grep', noremap = true
+    })
+    vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, {
+      desc = 'Definitions', noremap = true
+    })
+    vim.keymap.set('n', '<leader>x', builtin.diagnostics, {
+      desc = 'Diagnostics (Telescope)', noremap = true
+    })
 
-    vim.keymap.set('n', '<leader>f', builtin.find_files, set_desc('find_files'))
-    vim.keymap.set('n', '<leader>b', builtin.buffers, set_desc('buffers'))
-    vim.keymap.set('n', '<leader>g', builtin.live_grep, set_desc('live_grep'))
-
-    vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, set_desc('definitions'))
-    vim.keymap.set('n', '<leader>p', builtin.diagnostics, set_desc('diagnostics'))
-
-    -- vim.keymap.set('n', '<leader>a', builtin.current_buffer_fuzzy_find, opts)
+    -- vim.keymap.set('n', '<leader>a', builtin.current_buffer_fuzzy_find, {
+    --   noremap = true
+    -- })
   end
 }
