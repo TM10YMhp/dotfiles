@@ -11,11 +11,7 @@ hi Normal           NONE
 hi NormalFloat      NONE
 hi! link NormalFloat Normal
 hi NonText          NONE
-hi Comment          NONE cterm=italic
-
-if has("win32")
-  hi Comment NONE ctermfg=gray
-endif
+hi Comment          NONE ctermfg=darkgreen
 
 hi TabLine     NONE
 hi! link TabLine Comment
@@ -47,7 +43,7 @@ hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
 hi IncSearch        NONE ctermfg=darkyellow cterm=reverse
-hi Search           NONE ctermfg=white cterm=reverse
+hi Search           NONE ctermfg=darkgreen cterm=reverse
 
 hi LineNr           NONE
 hi CursorLineNr     NONE cterm=reverse
@@ -61,10 +57,10 @@ hi! link Folded     LineNr
 hi Visual      NONE cterm=reverse
 hi! link VisualNOS Visual
 
-hi Pmenu       NONE ctermfg=white cterm=reverse
+hi Pmenu       NONE cterm=reverse
 hi PmenuSel    NONE
 hi PmenuSbar   NONE
-hi PmenuThumb  NONE ctermbg=white
+hi PmenuThumb  NONE cterm=reverse
 
 hi! link BufTabLineActive TabLineSel
 

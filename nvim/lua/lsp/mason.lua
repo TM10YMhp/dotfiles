@@ -12,8 +12,3 @@ require("mason").setup({
   }
 })
 require("mason-lspconfig").setup()
-
-vim.keymap.set('n', [[\s]], ':LspStart')
-vim.keymap.set('n', [[\r]], ':LspRestart')
-vim.keymap.set('n', [[\i]], ':LspInfo')
-vim.keymap.set('n', [[\l]], ':LspLog')

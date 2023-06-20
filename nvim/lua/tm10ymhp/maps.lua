@@ -39,6 +39,6 @@ vim.keymap.set('n', '<leader>0', '<cmd>e #<cr>', {
 vim.keymap.set({'n', 'i'}, '<esc>', '<cmd>nohlsearch<cr><esc>', {
   desc = 'Escape and clear hlsearch'
 })
-vim.keymap.set('n', '<leader>o', '<cmd>set list!<cr>', {
+vim.keymap.set('n', '<leader>uo', '<cmd>set list!<cr>', {
   desc = "Toogle list mode"
 })
