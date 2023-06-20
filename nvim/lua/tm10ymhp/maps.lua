@@ -2,9 +2,22 @@ vim.keymap.set('n', 'ZZ', '<nop>')
 vim.keymap.set('n', 'ZQ', '<nop>')
 vim.keymap.set('n', '<c-z>', '<nop>')
 
-vim.keymap.set('n', [[\q]], ':%bw')
-vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]])
-vim.keymap.set('x', [[\\]], [[:s///gc<left><left><left>]])
+vim.keymap.set('n', '<leader>qq', '<cmd>bw<cr>', {
+  desc = "Delete Buffer (wipeout)"
+})
+vim.keymap.set('n', '<leader>qa', '<cmd>%bw<cr>', {
+  desc = "Delete All Buffers (wipeout)"
+})
+vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>]], {
+  desc = "Remove Trailing Whitespace"
+})
+
+vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]], {
+  desc = "Substitute"
+})
+vim.keymap.set('x', [[\\]], [[:s///gc<left><left><left>]], {
+  desc = "Substitute"
+})
 
 --[[move in wrap lines
 local opts = { noremap = true }

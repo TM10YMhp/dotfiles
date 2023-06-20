@@ -2,7 +2,6 @@ return {
   "echasnovski/mini.completion",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local opts = { expr = true }
     local keys = {
       ['cr']        = vim.api.nvim_replace_termcodes('<CR>', true, true, true),
       ['c-y']    = vim.api.nvim_replace_termcodes('<C-y>', true, true, true),
@@ -18,9 +17,15 @@ return {
       end
     end
 
-    vim.keymap.set('i', '<CR>', 'v:lua._G.cr_action()', opts)
-    vim.keymap.set('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]], opts)
-    vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<Tab>"]], opts)
+    vim.keymap.set('i', '<CR>', 'v:lua._G.cr_action()', {
+      desc = "Completion: Confirm", expr = true
+    })
+    vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], {
+      desc = "Completion: Next Item", expr = true
+    })
+    vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<Tab>"]], {
+      desc = "Completion: Prev Item", expr = true
+    })
 
     vim.opt.shortmess:append('c')
 

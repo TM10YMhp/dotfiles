@@ -1,5 +1,21 @@
 return {
   {
+    "junegunn/vim-easy-align",
+    event = "VeryLazy",
+    init = function()
+      vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)')
+    end
+  },
+  {
+    "FooSoft/vim-argwrap",
+    event = "VeryLazy",
+    init = function()
+      vim.keymap.set('n', 'gW', '<cmd>ArgWrap<cr>', {
+        desc = "ArgWrap: Toogle Argument Wrapping"
+      })
+    end
+  },
+  {
     "justinmk/vim-sneak",
     event = "VeryLazy",
     init = function()

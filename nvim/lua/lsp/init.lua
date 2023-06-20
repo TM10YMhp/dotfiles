@@ -7,31 +7,7 @@ require('lspconfig.ui.windows').default_options = {
 }
 
 local defaults = {
-  autostart = false,
-  on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', '')
-
-    local opts = { buffer = bufnr }
-
-    vim.keymap.set('n', '<leader>=', vim.lsp.buf.format,
-      vim.tbl_extend('force', opts, { desc = 'LSP: Format Document'})
-    )
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover,
-      vim.tbl_extend('force', opts, { desc = 'LSP: Hover'})
-    )
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename,
-      vim.tbl_extend('force', opts, { desc = 'LSP: Rename'})
-    )
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.add_workspace_folder,
-      vim.tbl_extend('force', opts, { desc = 'LSP: Add Workspace Folder'})
-    )
-    vim.keymap.set('n', '<leader>cr', vim.lsp.buf.remove_workspace_folder,
-      vim.tbl_extend('force', opts, { desc = 'LSP: Remove Workspace Folder'})
-    )
-    vim.keymap.set('n', '<leader>cl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, vim.tbl_extend('force', opts, { desc = 'LSP: List Workspace Folders'}))
-  end
+  autostart = false
 }
 
 local dir = "servers"
