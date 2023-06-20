@@ -8,7 +8,7 @@ vim.keymap.set('n', '<leader>qq', '<cmd>bw<cr>', {
 vim.keymap.set('n', '<leader>qa', '<cmd>%bw<cr>', {
   desc = "Delete All Buffers (wipeout)"
 })
-vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>]], {
+vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>'']], {
   desc = "Remove Trailing Whitespace"
 })
 
