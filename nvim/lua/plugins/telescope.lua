@@ -4,16 +4,19 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
   config = function ()
     vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
+    vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = "Comment" })
 
-    local augroup = vim.api.nvim_create_augroup('tm10ymhp', {clear = true})
+    local augroup = vim.api.nvim_create_augroup('tm10ymhp', { clear = true })
     vim.api.nvim_create_autocmd('ColorScheme', {
       group = augroup,
       desc = 'Clear TelescopeSelection',
       callback = function()
         vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
+        vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = "Comment" })
       end
     })
 
@@ -106,9 +109,6 @@ return {
           path_display = { tail = true },
         },
         colorscheme = { enable_preview = true },
-        current_buffer_fuzzy_find = {
-          sorter = require('telescope.sorters').get_substr_matcher({})
-        },
         keymaps = {
           modes = { "", "n", "v", "s", "x", "o", "!", "i", "l", "c", "t" }
         }
@@ -118,23 +118,30 @@ return {
           hidden = true,
           hijack_netrw = true,
           file_ignore_patterns = nil,
+        },
+        fzf = {
+          fuzzy = false,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case"
         }
       }
     })
 
+    telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
 
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set('n', '<leader>t', '<cmd>Telescope file_browser<cr>', {
+    vim.keymap.set('n', '<leader>et', '<cmd>Telescope file_browser<cr>', {
       desc = 'Telescope: Explorer (rood dir)'
     })
 
-    vim.keymap.set('n', '<leader>T', '<cmd>Telescope file_browser path=%:p:h<cr>', {
+    vim.keymap.set('n', '<leader>eT', '<cmd>Telescope file_browser path=%:p:h<cr>', {
       desc = 'Telescope: Explorer (cwd)'
     })
 
-    vim.keymap.set('n', '<leader>k', function()
+    vim.keymap.set('n', '<leader>ek', function()
       builtin.keymaps({
         show_plug = false,
         layout_config = { width = 75 }
@@ -144,23 +151,26 @@ return {
     vim.keymap.set('n', '<leader>uc', builtin.colorscheme, {
       desc = 'Telescope: Colorscheme preview'
     })
-    vim.keymap.set('n', '<leader>f', builtin.find_files, {
-      desc = 'Telescope: Find Files'
+    vim.keymap.set('n', '<leader>ef', builtin.find_files, {
+      desc = 'Telescope: Find Files (root dir)'
     })
-    vim.keymap.set('n', '<leader>b', builtin.buffers, {
+    vim.keymap.set('n', '<leader>eF', '<cmd>Telescope find_files cwd=%:p:h<cr>', {
+      desc = 'Telescope: Find Files (cwd)'
+    })
+    vim.keymap.set('n', '<leader>eb', builtin.buffers, {
       desc = 'Telescope: Buffers'
     })
-    vim.keymap.set('n', '<leader>/', builtin.live_grep, {
+    vim.keymap.set('n', '<leader>eg', builtin.live_grep, {
       desc = 'Telescope: Grep'
     })
-    vim.keymap.set('n', '<leader>w', builtin.current_buffer_fuzzy_find, {
+    vim.keymap.set('n', '<leader>cs', builtin.current_buffer_fuzzy_find, {
       desc = 'Telescope: Search Word'
     })
 
-    vim.keymap.set('n', '<leader>D', builtin.diagnostics, {
+    vim.keymap.set('n', '<leader>cD', builtin.diagnostics, {
       desc = 'Telescope: Workspace Diagnostics'
     })
-    vim.keymap.set('n', '<leader>d', '<cmd>Telescope diagnostics bufnr=0<cr>', {
+    vim.keymap.set('n', '<leader>cd', '<cmd>Telescope diagnostics bufnr=0<cr>', {
       desc = 'Telescope: Document Diagnostics'
     })
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {

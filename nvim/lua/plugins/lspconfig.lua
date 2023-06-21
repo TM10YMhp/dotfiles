@@ -6,7 +6,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
+    vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, {
       desc = 'LSP: Line Diagnostics'
     })
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {
@@ -15,10 +15,10 @@ return {
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {
       desc = 'LSP: Prev Diagnostic'
     })
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {
+    vim.keymap.set('n', '<leader>cn', vim.lsp.buf.rename, {
       desc = 'LSP: Rename'
     })
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {
+    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover, {
       desc = 'LSP: Hover'
     })
 
