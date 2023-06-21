@@ -8,6 +8,22 @@ vim.keymap.set('n', '<leader>qq', '<cmd>bw<cr>', {
 vim.keymap.set('n', '<leader>qa', '<cmd>%bw<cr>', {
   desc = "Delete All Buffers (wipeout)"
 })
+vim.keymap.set('n', '<leader>qc', function()
+    local total = vim.fn.len(vim.fn.getbufinfo({buflisted = 1 }))
+    if total > 1 then
+      local file = vim.fn.expand("%")
+      vim.cmd('silent %bw')
+      vim.cmd('e '..file)
+      if total-1 > 1 then
+        vim.print(total-1 .. ' buffers wiped out')
+      end
+    else
+      vim.print('no buffers were found for deletion')
+    end
+  end, {
+  desc = "Delete All Buffers and Reopen Previous Buffer (wipeout)"
+})
+
 vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>'']], {
   desc = "Remove Trailing Whitespace"
 })

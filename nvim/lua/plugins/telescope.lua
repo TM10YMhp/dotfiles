@@ -57,6 +57,7 @@ return {
           i = {
             ["<C-p>"] = action_layout.toggle_preview,
             ["<M-q>"] = function(pb)
+              -- https://github.com/nvim-telescope/telescope.nvim/issues/1048
               local picker = action_state.get_current_picker(pb)
               local multi = picker:get_multi_selection()
               actions.select_default(pb) -- the normal enter behaviour
