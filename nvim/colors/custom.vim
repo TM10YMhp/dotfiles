@@ -42,8 +42,8 @@ hi StatusLineTermNC NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
-hi IncSearch        NONE ctermfg=darkyellow cterm=reverse
-hi Search           NONE ctermfg=darkgreen cterm=reverse
+hi IncSearch        NONE ctermfg=darkyellow
+hi Search           NONE ctermfg=lightgreen
 
 hi LineNr           NONE
 hi CursorLineNr     NONE cterm=reverse
@@ -72,10 +72,10 @@ hi Title       NONE
 hi Directory   NONE
 hi SpecialKey  NONE
 
-hi DiffDelete NONE ctermfg=red cterm=reverse
-hi DiffAdd    NONE ctermfg=green cterm=reverse
-hi DiffChange NONE ctermfg=yellow cterm=reverse
-hi DiffText   NONE ctermfg=cyan cterm=reverse
+hi DiffDelete NONE ctermfg=red
+hi DiffAdd    NONE ctermfg=lightgreen
+hi DiffChange NONE ctermfg=darkyellow
+hi DiffText   NONE ctermfg=cyan
 
 hi DiagnosticError NONE
 hi DiagnosticWarn  NONE

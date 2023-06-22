@@ -31,26 +31,6 @@ return {
     end
   },
   {
-    "ap/vim-buftabline",
-    event = "BufEnter",
-    init = function()
-      vim.g.buftabline_show = 2
-      vim.g.buftabline_separators = 0
-      vim.g.buftabline_numbers = 2
-      vim.g.buftabline_plug_max = 9
-
-      vim.keymap.set('n', '<leader>1', '<Plug>BufTabLine.Go(1)')
-      vim.keymap.set('n', '<leader>2', '<Plug>BufTabLine.Go(2)')
-      vim.keymap.set('n', '<leader>3', '<Plug>BufTabLine.Go(3)')
-      vim.keymap.set('n', '<leader>4', '<Plug>BufTabLine.Go(4)')
-      vim.keymap.set('n', '<leader>5', '<Plug>BufTabLine.Go(5)')
-      vim.keymap.set('n', '<leader>6', '<Plug>BufTabLine.Go(6)')
-      vim.keymap.set('n', '<leader>7', '<Plug>BufTabLine.Go(7)')
-      vim.keymap.set('n', '<leader>8', '<Plug>BufTabLine.Go(8)')
-      vim.keymap.set('n', '<leader>9', '<Plug>BufTabLine.Go(9)')
-    end
-  },
-  {
     "voldikss/vim-floaterm",
     event = "VeryLazy",
     init = function()

@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  event = "BufEnter",
+  lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -108,6 +108,8 @@ return {
           layout_strategy = 'vertical',
           path_display = { tail = true },
         },
+        autocommands = { layout_strategy = 'vertical' },
+        help_tags = { layout_strategy = 'vertical' },
         colorscheme = { enable_preview = true },
         keymaps = {
           modes = { "", "n", "v", "s", "x", "o", "!", "i", "l", "c", "t" }
@@ -134,11 +136,11 @@ return {
     local builtin = require("telescope.builtin")
 
     vim.keymap.set('n', '<leader>et', '<cmd>Telescope file_browser<cr>', {
-      desc = 'Telescope: Explorer (rood dir)'
+      desc = 'Explorer'
     })
 
     vim.keymap.set('n', '<leader>eT', '<cmd>Telescope file_browser path=%:p:h<cr>', {
-      desc = 'Telescope: Explorer (cwd)'
+      desc = 'Explorer (cwd)'
     })
 
     vim.keymap.set('n', '<leader>ek', function()
@@ -146,47 +148,56 @@ return {
         show_plug = false,
         layout_config = { width = 75 }
       })
-    end, { desc = 'Telescope: Key Maps' })
+    end, { desc = 'Key Maps' })
 
     vim.keymap.set('n', '<leader>uc', builtin.colorscheme, {
-      desc = 'Telescope: Colorscheme preview'
+      desc = 'Colorscheme with preview'
     })
     vim.keymap.set('n', '<leader>ef', builtin.find_files, {
-      desc = 'Telescope: Find Files (root dir)'
+      desc = 'Find Files'
     })
     vim.keymap.set('n', '<leader>eF', '<cmd>Telescope find_files cwd=%:p:h<cr>', {
-      desc = 'Telescope: Find Files (cwd)'
+      desc = 'Find Files (cwd)'
     })
     vim.keymap.set('n', '<leader>eb', builtin.buffers, {
-      desc = 'Telescope: Buffers'
+      desc = 'Buffers'
     })
     vim.keymap.set('n', '<leader>eg', builtin.live_grep, {
-      desc = 'Telescope: Grep'
+      desc = 'Grep'
     })
-    vim.keymap.set('n', '<leader>cs', builtin.current_buffer_fuzzy_find, {
-      desc = 'Telescope: Search Word'
+    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {
+      desc = 'Search Word'
+    })
+    vim.keymap.set('n', '<leader>ea', builtin.autocommands, {
+      desc = 'Autocommands'
+    })
+    vim.keymap.set('n', '<leader>eh', builtin.help_tags, {
+      desc = 'Help Pages'
+    })
+    vim.keymap.set('n', '<leader>eH', builtin.highlights, {
+      desc = 'Highlight Groups'
     })
 
     vim.keymap.set('n', '<leader>cD', builtin.diagnostics, {
-      desc = 'Telescope: Workspace Diagnostics'
+      desc = 'Workspace Diagnostics'
     })
     vim.keymap.set('n', '<leader>cd', '<cmd>Telescope diagnostics bufnr=0<cr>', {
-      desc = 'Telescope: Document Diagnostics'
+      desc = 'Document Diagnostics'
     })
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {
-      desc = 'Telescope: Goto Definitions'
+      desc = 'Goto Definitions'
     })
     vim.keymap.set('n', '<leader>gt', builtin.lsp_type_definitions, {
-      desc = 'Telescope: Goto Type Definitions'
+      desc = 'Goto Type Definitions'
     })
     vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {
-      desc = 'Telescope: Goto References'
+      desc = 'Goto References'
     })
     vim.keymap.set('n', '<leader>gs', builtin.lsp_document_symbols, {
-      desc = 'Telescope: Goto Symbols'
+      desc = 'Goto Symbols'
     })
     vim.keymap.set('n', '<leader>gS', builtin.lsp_dynamic_workspace_symbols, {
-      desc = 'Telescope: Goto Symbols (workspace)'
+      desc = 'Goto Symbols (workspace)'
     })
   end
 }

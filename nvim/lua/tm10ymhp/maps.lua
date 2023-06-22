@@ -49,20 +49,14 @@ vim.keymap.set('i', '<down>', '<c-o>gj', opts)
 vim.keymap.set('n', '<c-up>', '<cmd>resize +2<cr>', {
   desc = "Increase window height"
 })
-vim.keymap.set('n', '<c-down>', '<cmd>vertical resize -2<cr>', {
+vim.keymap.set('n', '<c-down>', '<cmd>resize -2<cr>', {
   desc = "Decrease window height"
 })
 vim.keymap.set('n', '<c-left>', '<cmd>vertical resize -2<cr>', {
   desc = "Decrease window width"
 })
-vim.keymap.set('n', '<c-right>', '<cmd>resize +2<cr>', {
+vim.keymap.set('n', '<c-right>', '<cmd>vertical resize +2<cr>', {
   desc = "Increase window width"
-})
-
-vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>', { desc = "Prev buffer" })
-vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { desc = "Next buffer" })
-vim.keymap.set('n', '<leader>0', '<cmd>e #<cr>', {
-  desc = "Switch to other buffer"
 })
 
 vim.keymap.set({'n', 'i'}, '<esc>', '<cmd>nohlsearch<cr><esc>', {
