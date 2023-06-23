@@ -150,9 +150,6 @@ return {
       })
     end, { desc = 'Key Maps' })
 
-    vim.keymap.set('n', '<leader>uc', builtin.colorscheme, {
-      desc = 'Colorscheme with preview'
-    })
     vim.keymap.set('n', '<leader>ef', builtin.find_files, {
       desc = 'Find Files'
     })
@@ -165,9 +162,6 @@ return {
     vim.keymap.set('n', '<leader>eg', builtin.live_grep, {
       desc = 'Grep'
     })
-    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {
-      desc = 'Search Word'
-    })
     vim.keymap.set('n', '<leader>ea', builtin.autocommands, {
       desc = 'Autocommands'
     })
@@ -178,12 +172,20 @@ return {
       desc = 'Highlight Groups'
     })
 
+    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {
+      desc = 'Search Word'
+    })
+    vim.keymap.set('n', '<leader>uc', builtin.colorscheme, {
+      desc = 'Colorscheme with preview'
+    })
+
     vim.keymap.set('n', '<leader>cD', builtin.diagnostics, {
       desc = 'Workspace Diagnostics'
     })
     vim.keymap.set('n', '<leader>cd', '<cmd>Telescope diagnostics bufnr=0<cr>', {
       desc = 'Document Diagnostics'
     })
+
     vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {
       desc = 'Goto Definitions'
     })

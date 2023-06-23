@@ -43,7 +43,7 @@ hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
 hi IncSearch        NONE ctermfg=darkyellow
-hi Search           NONE ctermfg=lightgreen
+hi Search           NONE ctermfg=blue
 
 hi LineNr           NONE
 hi CursorLineNr     NONE cterm=reverse

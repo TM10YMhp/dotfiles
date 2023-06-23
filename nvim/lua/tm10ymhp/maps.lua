@@ -10,18 +10,29 @@ vim.keymap.set('n', '<leader>qa', '<cmd>%bw<cr>', {
 })
 vim.keymap.set('n', '<leader>qc', function()
     local total = vim.fn.len(vim.fn.getbufinfo({buflisted = 1 }))
-    if total > 1 then
-      local file = vim.fn.expand("%")
-      vim.cmd('silent %bw')
-      vim.cmd('e '..file)
-      if total-1 > 1 then
-        vim.print(total-1 .. ' buffers wiped out')
-      end
-    else
-      vim.print('no buffers were found for deletion')
+    if total < 1 then
+      return vim.api.nvim_err_writeln('no buffers were found for deletion')
     end
+
+    local file = vim.fn.expand("%")
+    local ok, msg = pcall(vim.cmd, "%bw")
+
+    if not ok then
+      return vim.api.nvim_err_writeln(msg:match(":(%a%d.+)"))
+    end
+    vim.cmd('e '..file)
   end, {
-  desc = "Delete All Buffers and Reopen Previous Buffer (wipeout)"
+  desc = "Delete All, Reopen (wipeout)"
+})
+vim.keymap.set('n', '<leader>qr', function()
+    local file = vim.fn.expand("%")
+    local ok, msg = pcall(vim.cmd, "bw")
+    if not ok then
+      return vim.api.nvim_err_writeln(msg:match(":(%a%d.+)"))
+    end
+    vim.cmd('e '..file)
+  end, {
+  desc = "Reopen Previous Buffer (wipeout)"
 })
 
 vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>'']], {
@@ -34,17 +45,6 @@ vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]], {
 vim.keymap.set('x', [[\\]], [[:s///gc<left><left><left>]], {
   desc = "Substitute"
 })
-
---[[move in wrap lines
-local opts = { noremap = true }
-
-vim.keymap.set('n', 'k', 'gk', opts)
-vim.keymap.set('n', 'j', 'gj', opts)
-vim.keymap.set('n', '<up>', 'gk', opts)
-vim.keymap.set('n', '<down>', 'gj', opts)
-vim.keymap.set('i', '<up>', '<c-o>gk', opts)
-vim.keymap.set('i', '<down>', '<c-o>gj', opts)
-]]
 
 vim.keymap.set('n', '<c-up>', '<cmd>resize +2<cr>', {
   desc = "Increase window height"

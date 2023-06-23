@@ -5,18 +5,7 @@ return {
     require('lualine').setup({
       options = {
         icons_enabled = false,
-        theme = {
-          normal = {
-            a = "StatusLine",
-            b = "StatusLine",
-            c = "StatusLine"
-          },
-          inactive = {
-            a = "StatusLineNC",
-            b = "StatusLineNC",
-            c = "StatusLineNC"
-          }
-        },
+        theme = { normal = { a = "StatusLine" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
@@ -24,6 +13,7 @@ return {
         lualine_a = {'mode'},
         lualine_b = {'branch', {
             'diff',
+            -- colored = false,
             diff_color = {
               added    = 'DiffAdd',
               modified = 'DiffChange',
@@ -31,6 +21,7 @@ return {
             },
           }, {
             'diagnostics',
+            colored = false,
             sources = {'nvim_diagnostic'},
             diagnostics_color = {
               error = 'DiagnosticError',
@@ -44,7 +35,7 @@ return {
         lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {},
-        lualine_z = {'%L:%-2{virtcol("$") - 1} %l:%-2v'}
+        lualine_z = {'%L:%{virtcol("$") - 1}|%l:%-2v'}
       },
       inactive_sections = {
         lualine_a = {},

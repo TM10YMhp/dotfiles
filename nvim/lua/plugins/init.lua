@@ -18,19 +18,6 @@ return {
     end
   },
   {
-    "justinmk/vim-sneak",
-    event = "VeryLazy",
-    init = function()
-      vim.g['sneak#label'] = 1
-      vim.g['sneak#map_netrw'] = 0
-      vim.g['sneak#s_next'] = 1
-
-      vim.cmd[[hi Sneak cterm=reverse]]
-      vim.cmd[[hi SneakLabel cterm=reverse]]
-      vim.cmd[[hi SneakLabelMask ctermbg=white]]
-    end
-  },
-  {
     "voldikss/vim-floaterm",
     event = "VeryLazy",
     init = function()
