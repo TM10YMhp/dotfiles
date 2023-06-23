@@ -14,9 +14,9 @@ hi NonText          NONE
 hi Comment          NONE ctermfg=darkgreen
 
 hi TabLine     NONE
-hi! link TabLine Comment
 hi TabLineSel  NONE
 hi TabLineFill NONE
+hi! link TabLineFill Comment
 
 hi Conceal          NONE cterm=underline
 
