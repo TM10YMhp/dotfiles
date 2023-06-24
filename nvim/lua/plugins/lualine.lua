@@ -24,18 +24,7 @@ return {
         lualine_a = {'mode'},
         lualine_b = {'branch'},
         lualine_c = {'filename'},
-        lualine_x = {{
-          'diagnostics',
-          colored = false,
-          sources = {'nvim_diagnostic'},
-          diagnostics_color = {
-            error = 'DiagnosticError',
-            warn  = 'DiagnosticWarn',
-            info  = 'DiagnosticInfo',
-            hint  = 'DiagnosticHint',
-          },
-          update_in_insert = false
-        }},
+        lualine_x = {'b:gitsigns_status'},
         lualine_y = {'encoding', 'fileformat', 'filetype'},
         lualine_z = {'%L:%{virtcol("$") - 1}|%l:%-2v'}
       },
