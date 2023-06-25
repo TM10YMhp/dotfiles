@@ -2,9 +2,21 @@ return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
   config = function()
-    require('bufferline').setup({
+    local bufferline = require('bufferline')
+    bufferline.setup({
       options = {
+        style_preset = {
+          bufferline.style_preset.no_bold,
+          bufferline.style_preset.no_italic
+        },
         themable = false,
+        numbers = function(opts)
+          return string.format('%s.%s', opts.ordinal, opts.id)
+        end,
+        close_command = "bwipeout! %d",
+        right_mouse_command = "",
+        left_mouse_command = "",
+        middle_mouse_command = "",
         indicator = { icon = " *" },
         buffer_close_icon = "x",
         modified_icon = '●',
@@ -48,8 +60,66 @@ return {
     vim.keymap.set('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', {
       desc = "Next buffer"
     })
-    vim.keymap.set('n', '<leader>`', '<cmd>e #<cr>', {
+    vim.keymap.set('n', '[b', '<cmd>BufferLineCyclePrev<cr>', {
+      desc = "Prev buffer"
+    })
+    vim.keymap.set('n', ']b', '<cmd>BufferLineCycleNext<cr>', {
+      desc = "Next buffer"
+    })
+    vim.keymap.set('n', '<leader>b`', '<cmd>e #<cr>', {
       desc = "Switch to other buffer"
     })
+    vim.keymap.set('n', '<leader>bn', '<cmd>BufferLineMoveNext<cr>', {
+      desc = "Move Buffer Forward"
+    })
+    vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineMovePrev<cr>', {
+      desc = "Move Buffer Backward"
+    })
+    vim.keymap.set('n', '<leader>bN', '<cmd>BufferLineCloseRight<cr>', {
+      desc = "Close All Buffers To The Right"
+    })
+    vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineCloseLeft<cr>', {
+      desc = "Close All Buffers To The Left"
+    })
+    vim.keymap.set('n', '<leader>b1',
+      "<cmd>lua require('bufferline').go_to(1, true)<cr>",
+      { desc = "Go To Buffer 1" }
+    )
+    vim.keymap.set( 'n', '<leader>b2',
+      "<cmd>lua require('bufferline').go_to(2, true)<cr>",
+      { desc = "Go To Buffer 2" }
+    )
+    vim.keymap.set('n', '<leader>b3',
+      "<cmd>lua require('bufferline').go_to(3, true)<cr>",
+      { desc = "Go To Buffer 3" }
+    )
+    vim.keymap.set( 'n', '<leader>b4',
+      "<cmd>lua require('bufferline').go_to(4, true)<cr>",
+      { desc = "Go To Buffer 4" }
+    )
+    vim.keymap.set( 'n', '<leader>b5',
+      "<cmd>lua require('bufferline').go_to(5, true)<cr>",
+      { desc = "Go To Buffer 5" }
+    )
+    vim.keymap.set( 'n', '<leader>b6',
+      "<cmd>lua require('bufferline').go_to(6, true)<cr>",
+      { desc = "Go To Buffer 6" }
+    )
+    vim.keymap.set( 'n', '<leader>b7',
+      "<cmd>lua require('bufferline').go_to(7, true)<cr>",
+      { desc = "Go To Buffer 7" }
+    )
+    vim.keymap.set( 'n', '<leader>b8',
+      "<cmd>lua require('bufferline').go_to(8, true)<cr>",
+      { desc = "Go To Buffer 8" }
+    )
+    vim.keymap.set( 'n', '<leader>b9',
+      "<cmd>lua require('bufferline').go_to(9, true)<cr>",
+      { desc = "Go To Buffer 9" }
+    )
+    vim.keymap.set( 'n', '<leader>b$',
+      "<cmd>lua require('bufferline').go_to(-1, true)<cr>",
+      { desc = "Go To Last Buffer" }
+    )
   end
 }

@@ -25,6 +25,18 @@ return {
     local action_layout = require("telescope.actions.layout")
     local action_state = require("telescope.actions.state")
 
+    local open_selected = function(pb)
+      -- https://github.com/nvim-telescope/telescope.nvim/issues/1048
+      local picker = action_state.get_current_picker(pb)
+      local multi = picker:get_multi_selection()
+      actions.select_default(pb) -- the normal enter behaviour
+      for _, j in pairs(multi) do
+        if j.path ~= nil then -- is it a file -> open it as well:
+          vim.cmd(string.format("%s %s", "edit", j.path))
+        end
+      end
+    end
+
     telescope.setup({
       defaults = {
         preview = { hide_on_startup = true },
@@ -59,17 +71,11 @@ return {
         mappings = {
           i = {
             ["<C-p>"] = action_layout.toggle_preview,
-            ["<M-q>"] = function(pb)
-              -- https://github.com/nvim-telescope/telescope.nvim/issues/1048
-              local picker = action_state.get_current_picker(pb)
-              local multi = picker:get_multi_selection()
-              actions.select_default(pb) -- the normal enter behaviour
-              for _, j in pairs(multi) do
-                if j.path ~= nil then -- is it a file -> open it as well:
-                  vim.cmd(string.format("%s %s", "edit", j.path))
-                end
-              end
-            end,
+            ["<M-q>"] = open_selected
+          },
+          n = {
+            ["<C-p>"] = action_layout.toggle_preview,
+            ["<M-q>"] = open_selected
           }
         },
       },

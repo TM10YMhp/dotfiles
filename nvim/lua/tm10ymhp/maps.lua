@@ -15,34 +15,16 @@ vim.keymap.set('n', '<leader>qq', '<cmd>bw<cr>', {
 vim.keymap.set('n', '<leader>qa', '<cmd>%bw<cr>', {
   desc = "Delete All Buffers (wipeout)"
 })
-vim.keymap.set('n', '<leader>qc', function()
-    local total = vim.fn.len(vim.fn.getbufinfo({buflisted = 1 }))
-    if total < 1 then
-      return vim.api.nvim_err_writeln('no buffers were found for deletion')
-    end
+vim.keymap.set('n', '<leader>qc',
+  "<cmd>let t=expand('%')|%bw|exe 'e '..t|unlet t<cr>",
+  { desc = "Delete All, Reopen (wipeout)" }
+)
+vim.keymap.set('n', '<leader>qr',
+  "<cmd>let t=expand('%')|bw|exe 'e '..t|unlet t<cr>",
+  { desc = "Reopen This Buffer (wipeout)" }
+)
 
-    local file = vim.fn.expand("%")
-    local ok, msg = pcall(vim.cmd, "%bw")
-
-    if not ok then
-      return vim.api.nvim_err_writeln(msg:match(":(%a%d.+)"))
-    end
-    vim.cmd('e '..file)
-  end, {
-  desc = "Delete All, Reopen (wipeout)"
-})
-vim.keymap.set('n', '<leader>qr', function()
-    local file = vim.fn.expand("%")
-    local ok, msg = pcall(vim.cmd, "bw")
-    if not ok then
-      return vim.api.nvim_err_writeln(msg:match(":(%a%d.+)"))
-    end
-    vim.cmd('e '..file)
-  end, {
-  desc = "Reopen Previous Buffer (wipeout)"
-})
-
-vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//e<cr>'']], {
+vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//g|norm!``<cr>]], {
   desc = "Remove Trailing Whitespace"
 })
 

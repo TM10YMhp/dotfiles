@@ -3,12 +3,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local keys = {
-      ['cr']        = vim.api.nvim_replace_termcodes('<CR>', true, true, true),
-      ['c-y']    = vim.api.nvim_replace_termcodes('<C-y>', true, true, true),
+      ['cr']      = vim.api.nvim_replace_termcodes('<CR>', true, true, true),
+      ['c-y']     = vim.api.nvim_replace_termcodes('<C-y>', true, true, true),
       ['c-n_c-y'] = vim.api.nvim_replace_termcodes('<C-n><C-y>', true, true, true),
     }
 
-    _G.cr_action = function()
+    local cr_action = function()
       if vim.fn.pumvisible() ~= 0 then
         local item_selected = vim.fn.complete_info()['selected'] ~= -1
         return item_selected and keys['c-y'] or keys['c-n_c-y']
@@ -17,7 +17,7 @@ return {
       end
     end
 
-    vim.keymap.set('i', '<CR>', 'v:lua._G.cr_action()', {
+    vim.keymap.set('i', '<CR>', cr_action, {
       desc = "Completion: Confirm", expr = true
     })
     vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], {
