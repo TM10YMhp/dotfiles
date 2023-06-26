@@ -1,5 +1,9 @@
 return {
   {
+    "folke/tokyonight.nvim",
+    event = "VeryLazy",
+  },
+  {
     "junegunn/vim-easy-align",
     event = "VeryLazy",
     init = function()

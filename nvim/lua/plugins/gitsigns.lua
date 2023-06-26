@@ -32,8 +32,9 @@ return {
     vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, {
       desc = "Stage Buffer"
     })
-    vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, {
-      desc = "Reset Buffer"
-    })
+    vim.keymap.set("n", "<leader>hR",
+      "<cmd>exe 'Gitsigns reset_buffer'|Gitsigns refresh<cr>",
+      { desc = "Reset Buffer" }
+    )
   end
 }
