@@ -23,11 +23,12 @@ return {
     vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, {
       desc = "Preview Hunk"
     })
-    vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, {
-      desc = "Stage Hunk"
-    })
+    vim.keymap.set("n", "<leader>hs",
+      "<cmd>exe 'Gitsigns stage_hunk'|w<cr>",
+      { desc = "Stage Hunk" }
+    )
     vim.keymap.set("v", "<leader>hs",
-      [[<cmd>exe "'<,'>Gitsigns stage_hunk"|w<cr>]],
+      [[:<c-u>exe "'<,'>Gitsigns stage_hunk"|w<cr>]],
       { desc = "Stage Hunk" }
     )
     vim.keymap.set({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", {
