@@ -14,7 +14,7 @@ return {
     event = "VeryLazy",
     config = function ()
       require("telescope").load_extension("conventional_commits")
-      vim.keymap.set('n', '<leader>ec', '<cmd>Telescope conventional_commits<cr>', {
+      vim.keymap.set('n', '<leader>hc', '<cmd>Telescope conventional_commits<cr>', {
         desc = 'Conventional Commits'
       })
     end
@@ -202,6 +202,9 @@ return {
       vim.keymap.set('n', '<leader>eH', builtin.highlights, {
         desc = 'Highlight Groups'
       })
+      vim.keymap.set('n', '<leader>er', builtin.resume, {
+        desc = 'Resume'
+      })
 
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {
         desc = 'Search Word'
@@ -233,11 +236,11 @@ return {
         desc = 'Goto Symbols (workspace)'
       })
 
-      vim.keymap.set('n', '<leader>vc',
+      vim.keymap.set('n', '<leader>ec',
         "<cmd>exe 'Telescope git_commits cwd='..expand('%:p:h')<cr>",
         { desc = 'Git Commits (cwd)' }
       )
-      vim.keymap.set('n', '<leader>vs',
+      vim.keymap.set('n', '<leader>es',
         "<cmd>exe 'Telescope git_status cwd='..expand('%:p:h')<cr>",
         { desc = 'Git Status (cwd)' }
       )

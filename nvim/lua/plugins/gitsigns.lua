@@ -6,7 +6,7 @@ return {
     gitsigns.setup({ preview_config = { row = 1 } })
 
     vim.keymap.set({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", {
-      desc = "GitSigns Select Hunk"
+      desc = "Select Hunk"
     })
     vim.keymap.set("n", "]h", gitsigns.next_hunk, {
       desc = "Next Hunk"
@@ -23,15 +23,20 @@ return {
     vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, {
       desc = "Preview Hunk"
     })
-    vim.keymap.set({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", {
+    vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, {
       desc = "Stage Hunk"
     })
+    vim.keymap.set("v", "<leader>hs",
+      [[<cmd>exe "'<,'>Gitsigns stage_hunk"|w<cr>]],
+      { desc = "Stage Hunk" }
+    )
     vim.keymap.set({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", {
       desc = "Reset Hunk"
     })
-    vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, {
-      desc = "Stage Buffer"
-    })
+    vim.keymap.set("n", "<leader>hS",
+      "<cmd>exe 'Gitsigns stage_buffer'|w<cr>",
+      { desc = "Stage Buffer" }
+    )
     vim.keymap.set("n", "<leader>hR",
       "<cmd>exe 'Gitsigns reset_buffer'|Gitsigns refresh<cr>",
       { desc = "Reset Buffer" }
