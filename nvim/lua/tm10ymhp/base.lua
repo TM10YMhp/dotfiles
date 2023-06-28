@@ -105,5 +105,4 @@ vim.opt.termguicolors = false
 vim.opt.background = "dark"
 
 vim.cmd('syntax on')
-vim.cmd('colorscheme custom')
 vim.cmd([[match Error /\s\+$/]])

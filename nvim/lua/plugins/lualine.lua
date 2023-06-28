@@ -5,18 +5,6 @@ return {
     require('lualine').setup({
       options = {
         icons_enabled = false,
-        theme = {
-          normal = {
-            a = "StatusLine",
-            b = "StatusLine",
-            c = "StatusLine"
-          },
-          inactive = {
-            a = "StatusLineNC",
-            b = "StatusLineNC",
-            c = "StatusLineNC"
-          }
-        },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },

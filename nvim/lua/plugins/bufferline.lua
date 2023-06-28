@@ -17,7 +17,6 @@ return {
         right_mouse_command = "",
         left_mouse_command = "",
         middle_mouse_command = "",
-        indicator = { icon = " *" },
         buffer_close_icon = "x",
         modified_icon = '●',
         close_icon = "x",
@@ -44,16 +43,6 @@ return {
         separator_style = { "", "" },
         always_show_bufferline = true,
         hover = { enabled = false },
-      },
-      highlights = {
-        separator = { link = 'TabLineFill' },
-        separator_selected = { link = 'TabLine' },
-        background = { link = 'TabLine' },
-        numbers = { link = 'TabLine' },
-        buffer_selected = { link = 'Normal' },
-        numbers_selected = { link = 'Normal' },
-        indicator_selected = { link = 'Normal' },
-        fill = { link = 'TabLineFill' },
       },
     })
 

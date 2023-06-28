@@ -35,19 +35,6 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function ()
-      vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
-      vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = "Comment" })
-
-      local augroup = vim.api.nvim_create_augroup('tm10ymhp', { clear = true })
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        group = augroup,
-        desc = 'Clear TelescopeSelection',
-        callback = function()
-          vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
-          vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = "Comment" })
-        end
-      })
-
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local action_layout = require("telescope.actions.layout")
