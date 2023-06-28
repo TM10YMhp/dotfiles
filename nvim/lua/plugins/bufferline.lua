@@ -73,6 +73,9 @@ return {
     vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineCloseLeft<cr>', {
       desc = "Close All Buffers To The Left"
     })
+    vim.keymap.set('n', '<leader>bc', '<cmd>BufferLineCloseOthers<cr>', {
+      desc = "Close All Other Visible Buffers "
+    })
     vim.keymap.set('n', '<leader>b1',
       "<cmd>lua require('bufferline').go_to(1, true)<cr>",
       { desc = "Go To Buffer 1" }

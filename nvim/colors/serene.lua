@@ -2,6 +2,7 @@ if vim.g.colors_name then
   vim.cmd("hi clear")
 end
 
+vim.o.termguicolors = false
 vim.g.colors_name = "serene"
 
 local groups = {

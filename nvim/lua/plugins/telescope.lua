@@ -14,7 +14,7 @@ return {
     event = "VeryLazy",
     config = function ()
       require("telescope").load_extension("conventional_commits")
-      vim.keymap.set('n', '<leader>hc', '<cmd>Telescope conventional_commits<cr>', {
+      vim.keymap.set('n', '<leader>vw', '<cmd>Telescope conventional_commits<cr>', {
         desc = 'Conventional Commits'
       })
     end
@@ -129,6 +129,10 @@ return {
           },
           git_commits = { preview = { hide_on_startup = false } },
           git_status = { preview = { hide_on_startup = false } },
+          git_branches = { preview = { hide_on_startup = false } },
+          git_bcommits = { preview = { hide_on_startup = false } },
+          git_files = { preview = { hide_on_startup = false } },
+          git_stash = { preview = { hide_on_startup = false } },
           keymaps = {
             modes = { "", "n", "v", "s", "x", "o", "!", "i", "l", "c", "t" }
           }
@@ -223,13 +227,29 @@ return {
         desc = 'Goto Symbols (workspace)'
       })
 
-      vim.keymap.set('n', '<leader>ec',
+      vim.keymap.set('n', '<leader>vc',
         "<cmd>exe 'Telescope git_commits cwd='..expand('%:p:h')<cr>",
         { desc = 'Git Commits (cwd)' }
       )
-      vim.keymap.set('n', '<leader>es',
+      vim.keymap.set('n', '<leader>vs',
         "<cmd>exe 'Telescope git_status cwd='..expand('%:p:h')<cr>",
         { desc = 'Git Status (cwd)' }
+      )
+      vim.keymap.set('n', '<leader>vb',
+        "<cmd>exe 'Telescope git_branches cwd='..expand('%:p:h')<cr>",
+        { desc = 'Git Branch (cwd)' }
+      )
+      vim.keymap.set('n', '<leader>vC',
+        "<cmd>exe 'Telescope git_bcommits cwd='..expand('%:p:h')<cr>",
+        { desc = 'Git Buffer Commits (cwd)' }
+      )
+      vim.keymap.set('n', '<leader>vf',
+        "<cmd>exe 'Telescope git_files cwd='..expand('%:p:h')<cr>",
+        { desc = 'Git Files (cwd)' }
+      )
+      vim.keymap.set('n', '<leader>vt',
+        "<cmd>exe 'Telescope git_stash cwd='..expand('%:p:h')<cr>",
+        { desc = 'Git Stash (cwd)' }
       )
     end
   }
