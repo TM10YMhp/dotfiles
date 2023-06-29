@@ -1,36 +1,18 @@
-# TM10YMhp dotfiles
+# TM10YMhp's dotfiles
+
+Compatible con Linux y Windows.
 
 **Advertencia**: No uses ciegamente mi configuración a menos que sepas lo que eso implica. ¡Úselo bajo su propio riesgo!
 
 ![screenshot nvim](./images/screenshot_nvim.jpg)
 
-Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes).
-
-Limitar la memoria puede llevar a comportamientos inesperados.
-
-```bash
-NODE_OPTIONS=--max-old-space-size=256
-```
-
-### Requerido
-
-- neovim >= **0.9.1**
-- git >= **2.19.0**
-- node >= **18.14.0**
-- npm >= **9.3.1**
-- ripgrep >= **12.1.1**
-
-### Opcional
-
-- fd-find >= **8.2.1**
-- tmux >= **3.3a**
-- npm-check-updates
-- @mryhryki/markdown-preview
-- commitizen
-
 ## Neovim setup
 
-Requiere [Neovim](https://neovim.io/) (>= 0.9.1)
+Requiere [neovim](https://github.com/neovim/neovim), [git](https://git-scm.com/), [npm](https://nodejs.org/en/download), [ripgrep](https://github.com/BurntSushi/ripgrep), [make](https://www.gnu.org/software/make/) y [sed](https://www.gnu.org/software/sed/).
+
+Para usuarios de windows, `make` y `sed` estan incluidos en [w64devkit](https://github.com/skeeto/w64devkit).
+
+<details><summary>Plugins</summary>
 
 - [folke/lazy.nvim](https://github.com/folke/lazy.nvim) - A plugin manager for Neovim
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - A truecolor, solarized dark colorscheme
@@ -56,7 +38,25 @@ Requiere [Neovim](https://neovim.io/) (>= 0.9.1)
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers
 - [numToStr/Comment.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers
 
-### JDTLS
+</details>
+
+<sub>El tema Serene esta activado por defecto, puedo cambiarlo por [Tokyonight](https://github.com/folke/tokyonight.nvim) desde `init.lua`</sub>
+  
+```lua
+-- Lua
+-- vim.cmd[[colorscheme serene]]
+vim.cmd[[colorscheme tokyonight]]
+```
+
+## Shell setup
+
+  - **Windows**
+    - Necesitara [clink](https://github.com/chrisant996/clink) para el autocompletado y el prompt.
+    - [w64devkit](https://github.com/skeeto/w64devkit) anade comandos unix.
+  - **Linux**
+    - Reemplace el `PS1` para el prompt.
+
+## JDTLS
 
 Necesitaras jdk 17 o superior para que funcione correctamente.
 
@@ -66,15 +66,15 @@ Se recomienda configurar lo siguiente:
 JAVA_TOOL_OPTIONS=-Dfile.enconding=UTF-8
 ```
 
-### Configuraciones para Windows
+## Herramientas
 
-Posiblemente necesitaras descargar una fuente para que algunos plugins de neovim
-se muestren correctamente. Puedes probar la fuente Menlo o Meslo, o cualquier otra fuente.
+- npm-check-updates
+- @mryhryki/markdown-preview
 
-Necesitaras clink para el autocompletado y el prompt.
+Si su memoria RAM es limitada modifique el [tamaño máximo de memoria de node](https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes).
 
-Las configuraciones de clink y neovim deben colocarse en `appdata/local`.
+Limitar la memoria puede llevar a comportamientos inesperados.
 
-Para que los comandos de unix funcionen en windows necesitaras de [w64devkit](https://github.com/skeeto/w64devkit).
-
-Si necesitas mas sutocompletados puedes buscar en [clink-completions](https://github.com/vladimir-kotikov/clink-completions).
+```bash
+NODE_OPTIONS=--max-old-space-size=256
+```
