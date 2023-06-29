@@ -1,5 +1,15 @@
 return {
   {
+    "nvim-telescope/telescope-project.nvim",
+    event = "VeryLazy",
+    config = function ()
+      require("telescope").load_extension("project")
+      vim.keymap.set('n', '<leader>ep', '<cmd>Telescope project<cr>', {
+        desc = 'Projects'
+      })
+    end
+  },
+  {
     "debugloop/telescope-undo.nvim",
     event = "VeryLazy",
     config = function ()
@@ -190,9 +200,6 @@ return {
       vim.keymap.set('n', '<leader>eh', builtin.help_tags, {
         desc = 'Help Pages'
       })
-      vim.keymap.set('n', '<leader>eH', builtin.highlights, {
-        desc = 'Highlight Groups'
-      })
       vim.keymap.set('n', '<leader>er', builtin.resume, {
         desc = 'Resume'
       })
@@ -202,6 +209,9 @@ return {
       })
       vim.keymap.set('n', '<leader>uc', builtin.colorscheme, {
         desc = 'Colorscheme with preview'
+      })
+      vim.keymap.set('n', '<leader>uh', builtin.highlights, {
+        desc = 'Highlight Groups'
       })
 
       vim.keymap.set('n', '<leader>cD', builtin.diagnostics, {
