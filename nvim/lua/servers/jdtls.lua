@@ -40,7 +40,7 @@ return {
         java = {
           configuration = {
             updateBuildConfiguration = "disabled",
-            maven = { userSettings = null }
+            maven = { userSettings = nil }
           },
           errors = { incompleteClasspath = { severity = "warning" } },
           trace = { server = "off" },
@@ -56,11 +56,11 @@ return {
             }
           },
           referencesCodeLens = { enabled = false },
-          signatureHelp = { enabled = false },
+          signatureHelp = { enabled = true },
           implementationsCodeLens = { enabled = false },
           format = { enabled = true },
           saveActions = { organizeImports = false },
-          contentProvider = { preferred = null },
+          contentProvider = { preferred = nil },
           autobuild = { enabled = false },
         }
       }

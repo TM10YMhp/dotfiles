@@ -27,6 +27,9 @@ vim.keymap.set('n', '<leader>qr',
 vim.keymap.set('n', '<leader>cw', [[<cmd>%s/\s\+$//g|norm!``<cr>]], {
   desc = "Remove Trailing Whitespace"
 })
+vim.keymap.set('v', '<leader>cw', [[:s/\s\+$//<cr>]], {
+  desc = "Remove Trailing Whitespace"
+})
 
 vim.keymap.set('n', [[\\]], [[:%s///gc<left><left><left>]], {
   desc = "Substitute"

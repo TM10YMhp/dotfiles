@@ -7,7 +7,6 @@ if vim.fn.has('clipboard') == 1 then
 end
 
 vim.cmd('filetype plugin indent off')
---vim.cmd('filetype indent on') --polyglot - equal sign(=)
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -36,7 +35,6 @@ vim.opt.swapfile = false
 vim.opt.writebackup = false
 vim.opt.backup = false
 
---vim.cmd('set nottyfast')
 vim.opt.lazyredraw = true
 vim.opt.history = 100
 vim.opt.backspace = { "indent", "eol", "start" }
