@@ -48,6 +48,7 @@ Para usuarios de Windows, `make` y `sed` estan incluidos en [w64devkit](https://
 - [nvim-telescope/telescope-project.nvim](https://github.com/nvim-telescope/telescope-project.nvim)
 - [debugloop/telescope-undo.nvim](https://github.com/debugloop/telescope-undo.nvim)
 - [olacin/telescope-cc.nvim](https://github.com/olacin/telescope-cc.nvim)
+- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 
 </details>
 
