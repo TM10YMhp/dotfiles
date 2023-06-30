@@ -4,4 +4,4 @@ require('tm10ymhp.maps')
 require('tm10ymhp.diagnostic')
 require('tm10ymhp.lazy')
 
-vim.cmd('colorscheme serene')
+vim.cmd[[colorscheme serene]]
