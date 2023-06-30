@@ -61,5 +61,5 @@ Para usuarios de Windows, `make` y `sed` estan incluidos en [w64devkit](https://
 
 ## Herramientas
 
-- npm-check-updates
-- @mryhryki/markdown-preview
+- [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
+- [@mryhryki/markdown-preview](https://github.com/mryhryki/markdown-preview)
