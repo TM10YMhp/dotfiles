@@ -15,11 +15,8 @@ require("lazy").setup("plugins", {
   defaults = {
     lazy = true,
   },
-  install = {
-    colorscheme = { "custom" },
-  },
   ui = {
-    size = { width = 0.8, height = 30 },
+    size = { width = 90, height = 40 },
     wrap = true,
     border = "single",
     icons = {

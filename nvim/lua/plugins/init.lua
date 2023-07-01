@@ -1,33 +1,25 @@
 return {
   {
-    "ap/vim-buftabline",
-    lazy = false,
+    "folke/tokyonight.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "junegunn/vim-easy-align",
+    event = "VeryLazy",
     init = function()
-      vim.g.buftabline_show = 2
-      vim.g.buftabline_separators = 0
-      vim.g.buftabline_numbers = 1
-      vim.g.buftabline_plug_max = 0
+      vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', {
+        desc = "Align"
+      })
     end
   },
   {
-    "voldikss/vim-floaterm",
+    "echasnovski/mini.splitjoin",
     event = "VeryLazy",
-    init = function()
-      vim.g.floaterm_width = 0.8
-      vim.g.floaterm_height = 0.8
-      vim.g.floaterm_keymap_new = '<s-b>c'
-      vim.g.floaterm_keymap_prev = '<s-b>p'
-      vim.g.floaterm_keymap_next = '<s-b>n'
-      vim.g.floaterm_keymap_toggle = '<s-b>h'
-
-      vim.keymap.set('n', '<s-b>"',
-        '<cmd>FloatermNew --wintype=split --height=0.35<cr>',
-        { noremap = true}
-      )
-    end
+    opts = {}
   },
   {
-    "machakann/vim-sandwich",
+    "kylechui/nvim-surround",
     event = "VeryLazy",
+    opts = {}
   },
 }
