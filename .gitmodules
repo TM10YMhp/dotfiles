@@ -1,3 +1,6 @@
 [submodule "clink/clink-completions"]
 	path = clink/clink-completions
 	url = git@github.com:vladimir-kotikov/clink-completions.git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:TM10YMhp/init.lua.git
