@@ -1,21 +1,31 @@
+<div align="center">
+
+## Deprecado
+Esto está en desuso y todos los cambios futuros se realizarán en la rama `dev`.
+
+[Dotfiles - Dev](https://github.com/TM10YMhp/dotfiles/tree/dev)
+
+Se fusionara con `master` cuando salga neovim 0.10.0
+
+---
+
+## Advertencia
+No uses ciegamente mi configuración a menos que sepas lo que eso implica.
+
+### ¡Úselo bajo su propio riesgo!
+</div>
+
+-------------------------------
+
 # TM10YMhp's dotfiles
-
-**Advertencia**: No uses ciegamente mi configuración a menos que sepas lo que eso implica. ¡Úselo bajo su propio riesgo!
-
 ![screenshot](./images/screenshot.png)
 
-<details>
-  <summary><sub><b>
-    El tema <code>Serene</code> esta activado por defecto, puedo cambiarlo por <a href="https://github.com/folke/tokyonight.nvim">Tokyonight</a> desde <code>init.lua</code>
-  </summary></sub></b>
+El tema <code>Serene</code> esta activado por defecto, puede cambiarlo por <a href="https://github.com/folke/tokyonight.nvim">Tokyonight</a> desde <code>init.lua</code>
 
-  ```lua
-  -- vim.cmd[[colorscheme serene]]
-  vim.cmd[[colorscheme tokyonight]]
-  ```
-
-</details>
-
+```lua
+-- vim.cmd[[colorscheme serene]]
+vim.cmd[[colorscheme tokyonight]]
+```
 
 ## Neovim setup
 
