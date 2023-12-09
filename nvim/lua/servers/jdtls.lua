@@ -16,7 +16,7 @@ local workspace_dir = workspace_path .. project_name
 
 return {
   "jdtls",
-  setup = function(lspconfig)
+  setup = function()
     return {
       cmd = {
         'java',
@@ -33,7 +33,7 @@ return {
         '-configuration', path_to_lsp_server,
         '-data', workspace_dir,
       },
-      root_dir = lspconfig.util.root_pattern(
+      root_dir = require('lspconfig').util.root_pattern(
         ".git", "mvnw", "gradlew", "pom.xml", "build.gradle"
       ),
       settings = {

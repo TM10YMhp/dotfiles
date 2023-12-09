@@ -10,6 +10,11 @@ local defaults = {
   autostart = false
 }
 
+local status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if status then
+  defaults.capabilities = cmp_nvim_lsp.default_capabilities()
+end
+
 local dir = "servers"
 local config_path = vim.fn.stdpath("config") .. "/lua/"
 local files = vim.fn.split(vim.fn.glob(config_path .. dir .. "/*.lua", "\n"))
@@ -21,7 +26,7 @@ for _, file in pairs(files) do
     local enabled = not (server.enabled == false)
     if enabled then
       if type(server.setup) == "function" then
-        local opts = server.setup(lspconfig)
+        local opts = server.setup()
         local setup = vim.tbl_deep_extend("force", defaults, opts)
         local name = server[1]
         lspconfig[name].setup(setup)

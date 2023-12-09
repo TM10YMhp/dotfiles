@@ -12,9 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-  defaults = {
-    lazy = true,
-  },
+  defaults = { lazy = true },
+  dev = { path = "~/projects" },
   ui = {
     size = { width = 90, height = 40 },
     wrap = true,
@@ -27,11 +26,12 @@ require("lazy").setup("plugins", {
       init = "",
       import = "",
       keys = "",
-      lazy = "zᶻᶻ",
+      lazy = "(H)",
       loaded = "●",
       not_loaded = "○",
       plugin = "",
       runtime = "",
+      require = "",
       source = "",
       start = "",
       task = "",
@@ -43,7 +43,7 @@ require("lazy").setup("plugins", {
       },
     },
   },
-  throttle = 100,
+  throttle = 1000,
   checker = {
     enable = false,
   },
@@ -54,16 +54,17 @@ require("lazy").setup("plugins", {
   performance = {
     rtp = {
       disabled_plugins = {
+        "editorconfig",
         "gzip",
+        "man",
         "matchit",
         "matchparen",
+        "netrwPlugin",
+        "spellfile",
         "tarPlugin",
         "tohtml",
         "tutor",
         "zipPlugin",
-        "man",
-        "spellfile",
-        "netrwPlugin",
       },
     },
   },

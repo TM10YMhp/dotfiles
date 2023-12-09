@@ -1,17 +1,17 @@
 [alias]
-	loa = log --oneline --all
-	loaf = log --oneline --all -15
 	sts = status -sb
 	st = status
 	co = checkout
 	br = branch
 	ci = commit
-	loag = log --oneline --all --graph
-	loafg = log --oneline --all --graph -15
+	l = log --oneline --all
+	lf = log --oneline --all -15
+	lg = log --oneline --all --graph
+	lfg = log --oneline --all --graph -15
 	last = log -1 HEAD --stat
 	hist = log --pretty=format:\"%C(auto)%h %C(cyan)%cd %C(green)%an <%ae>%Creset %s%C(auto)%d%Creset\" --date=relative
 	empty = commit --allow-empty
-	a = !git add --all && git status && :
+	a = !git add --all && git status
 [user]
 	email = tm10ymhp@protonmail.com
 	name = tm10ymhp

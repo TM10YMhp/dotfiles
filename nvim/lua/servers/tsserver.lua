@@ -1,36 +1,36 @@
 return {
   "tsserver",
-  setup = function(lspconfig)
+  setup = function()
     return {
-      --root_dir = lspconfig.util.root_pattern(
+      --root_dir = require('lspconfig').util.root_pattern(
       --  "package.json", "tsconfig.json", "jsconfig.json", ".git"
       --),
-      cmd = { "typescript-language-server", "--stdio" },
+      -- cmd = { "typescript-language-server", "--stdio" },
       init_options = {
-        disableAutomaticTypingAcquisition = true,
-        preferences = {
-          quotePreference = "double",
-          includeAutomaticOptionalChainCompletions = false,
-          importModuleSpecifierPreference = "shortest",
-          importModuleSpecifierEnding = "minimal",
-          includeInlayParameterNameHints = "none",
-          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = false,
-          includeInlayVariableTypeHints = false,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-          includeInlayPropertyDeclarationTypeHints = false,
-          includeInlayFunctionLikeReturnTypeHints = false,
-          includeInlayEnumMemberValueHints = false,
-        },
+        -- disableAutomaticTypingAcquisition = true,
+        -- preferences = {
+        --   quotePreference = "double",
+        --   includeAutomaticOptionalChainCompletions = false,
+        --   importModuleSpecifierPreference = "shortest",
+        --   importModuleSpecifierEnding = "minimal",
+        --   includeInlayParameterNameHints = "none",
+        --   includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --   includeInlayFunctionParameterTypeHints = false,
+        --   includeInlayVariableTypeHints = false,
+        --   includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+        --   includeInlayPropertyDeclarationTypeHints = false,
+        --   includeInlayFunctionLikeReturnTypeHints = false,
+        --   includeInlayEnumMemberValueHints = false,
+        -- },
         tsserver = {
           logVerbosity = 'off',
           trace = 'off',
           useSyntaxServer = 'never'
         },
       },
-      settings = {
-        --completions = { completeFunctionCalls = true },
-      }
+      -- settings = {
+      --   --completions = { completeFunctionCalls = true },
+      -- }
     }
   end
 }

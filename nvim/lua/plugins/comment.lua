@@ -1,6 +1,9 @@
 return {
   "numToStr/Comment.nvim",
   event = "VeryLazy",
+  dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring"
+  },
   config = function()
     require('Comment').setup({
       padding = true,
@@ -23,7 +26,8 @@ return {
         basic = true,
         extra = true
       },
-      pre_hook = nil,
+      pre_hook = require('ts_context_commentstring.integrations.comment_nvim')
+        .create_pre_hook(),
       post_hook = nil,
     })
   end

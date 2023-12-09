@@ -1,8 +1,14 @@
 return {
   "tailwindcss",
-  enabled = false,
+  -- enabled = false,
   setup = function()
     return {
+      root_dir = require("lspconfig").util.root_pattern(
+        'tailwind.config.js',
+        'tailwind.config.cjs',
+        'tailwind.config.mjs',
+        'tailwind.config.ts'
+      ),
       settings = {
         tailwindCSS = {
           hovers = true,
@@ -10,6 +16,14 @@ return {
           emmetCompletions = false,
           colorDecorators = false,
           codeActions = false,
+          experimental = {
+            classRegex = {
+              {"cva\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)", "\"(.*?)\""},
+              {"cx\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)", "\"(.*?)\""},
+              {"twMerge\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)", "\"(.*?)\""},
+              {"cn\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)", "\"(.*?)\""},
+            }
+          }
         }
       }
     }

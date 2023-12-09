@@ -1,8 +1,8 @@
 return {
   "pyright",
-  setup = function(lspconfig)
+  setup = function()
     return {
-      root_dir = lspconfig.util.root_pattern(
+      root_dir = require('lspconfig').util.root_pattern(
         ".git",
         "setup.py",
         "setup.cfg",
