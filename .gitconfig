@@ -4,6 +4,10 @@
 	co = checkout
 	br = branch
 	ci = commit
+	lc = log --oneline
+	lfc = log --oneline -15
+	lgc = log --oneline --graph
+	lfgc = log --oneline --graph -15
 	l = log --oneline --all
 	lf = log --oneline --all -15
 	lg = log --oneline --all --graph
