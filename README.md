@@ -25,7 +25,18 @@ cmd - Windows
 bash - Linux
 
 ## ⚡️ Requisitos previos
+
 ## 🚀 Empezando
+
+```bash
+git submodule init
+git submodule update
+```
+
+```bash
+git pull --recurse-submodules
+```
+
 ## 🛠️ Extras
 ### 🗃️ Módulos globales de NPM
 - pnpm
