@@ -85,6 +85,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.gpuAcceleration": "off",
     "terminal.integrated.tabs.enableAnimation": false,
+    "update.mode": "manual",
     "vim.cursorStylePerMode.insert": "line",
     "vim.handleKeys": {
         "<C-d>": true,
