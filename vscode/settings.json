@@ -20,6 +20,10 @@
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": false,
     "editor.overviewRulerBorder": false,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on"
+    },
     "editor.renderControlCharacters": false,
     "editor.renderLineHighlight": "none",
     "editor.renderWhitespace": "none",
@@ -76,11 +80,21 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.gpuAcceleration": "off",
     "terminal.integrated.tabs.enableAnimation": false,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-f>": false,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.highlightedyank.duration": 100,
+    "vim.highlightedyank.enable": true,
+    "vim.useSystemClipboard": true,
     "window.autoDetectHighContrast": false,
     "window.newWindowDimensions": "inherit",
     "window.title": "${rootName}",
-    "window.titleBarStyle": "native",
     "window.zoomLevel": -0.62,
+    "workbench.activityBar.location": "top",
     "workbench.editor.decorations.badges": false,
     "workbench.editor.decorations.colors": false,
     "workbench.editor.enablePreview": false,
