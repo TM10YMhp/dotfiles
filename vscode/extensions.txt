@@ -1,0 +1,15 @@
+biomejs.biome
+bradlc.vscode-tailwindcss
+dbaeumer.vscode-eslint
+humao.rest-client
+MinecraftCommands.syntax-mcfunction
+ms-vscode.cmake-tools
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cpptools-themes
+ms-vsliveshare.vsliveshare
+SPGoding.datapack-language-server
+twxs.cmake
+usernamehw.errorlens
+vscodevim.vim
+WingedSeal.jmc
