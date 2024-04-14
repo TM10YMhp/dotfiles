@@ -14,8 +14,10 @@
     "terminal.integrated.tabs.enableAnimation": false,
     "update.mode": "manual",
     "vim.handleKeys": {
+        "<C-b>": false,
         "<C-d>": true,
         "<C-f>": false,
+        "<C-j>": false,
         "<C-s>": false,
         "<C-z>": false
     },
