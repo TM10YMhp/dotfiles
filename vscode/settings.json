@@ -5,10 +5,34 @@
         "comments": "on",
         "strings": "on"
     },
+    "editor.tabSize": 2,
     "explorer.compactFolders": false,
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
     "files.hotExit": "off",
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "ngClass",
+        "classNames"
+    ],
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "(?:cva|cx|twMerge|cn)\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)",
+            "\"(.*?)\""
+        ],
+        [
+            "[cC]lassName[s]?\\s*=\\s*{([^}]+)}",
+            "\"([^\"]*)\""
+        ],
+        [
+            "[cC]lassName[s]?\\s*=\\s*{([^}]+)}",
+            "\"([^\"]*)\""
+        ],
+        [
+            "@apply\\s([^;\\n]*)"
+        ],
+    ],
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.tabs.enableAnimation": false,
