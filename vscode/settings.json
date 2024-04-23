@@ -1,5 +1,6 @@
 {
     "editor.cursorBlinking": "solid",
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.minimap.enabled": false,
     "editor.quickSuggestions": {
         "comments": "on",
