@@ -1,0 +1,50 @@
+[alias]
+  sts = status -sb
+  st = status
+  co = checkout
+  br = branch
+  ci = commit
+  lc = log --oneline
+  lfc = log --oneline -15
+  lgc = log --oneline --graph
+  lfgc = log --oneline --graph -15
+  l = log --oneline --all
+  lf = log --oneline --all -15
+  lg = log --oneline --all --graph
+  lfg = log --oneline --all --graph -15
+  last = log -1 HEAD --stat
+  hist = log --pretty=format:\"%C(auto)%h %C(cyan)%cd %C(green)%an <%ae>%Creset %s%C(auto)%d%Creset\" --date=relative
+  empty = commit --allow-empty
+  a = !git add --all && git status
+  df = diff --diff-filter=ACMR
+  dn = diff --name-status
+[user]
+  email = tm10ymhp@protonmail.com
+  name = tm10ymhp
+[core]
+  editor = nvim
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+
+  side-by-side = true
+
+  file-style             = none
+  file-decoration-style  = gray ul
+  file-modified-label    = changed:
+  hunk-header-style      = omit
+  line-numbers-left-format   = "{nm:>1} "
+  line-numbers-right-format  = "{np:>1} "
+  right-arrow                = ->
+
+  wrap-max-lines=unlimited
+  wrap-right-percent=1
+  wrap-left-symbol=" "
+
+[merge]
+  conflictstyle = zdiff3

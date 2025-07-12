@@ -1,0 +1,15 @@
+# keybinding:
+#   universal:
+#     quit: "<esc>"
+#     return: "q"
+
+# https://github.com/jesseduffield/lazygit/issues/1453
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
+gui:
+  border: single
+  scrollHeight: 8
+  language: en

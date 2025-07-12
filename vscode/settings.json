@@ -1,0 +1,58 @@
+{
+  "editor.cursorBlinking": "solid",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on"
+  },
+  "editor.tabSize": 2,
+  "explorer.compactFolders": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "files.hotExit": "off",
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "classNames"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "(?:cva|cx|twMerge|cn)\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)",
+      "\"(.*?)\""
+    ],
+    ["[cC]lassName[s]?\\s*=\\s*{([^}]+)}", "\"([^\"]*)\""],
+    ["[cC]lassName[s]?\\s*=\\s*{([^}]+)}", "\"([^\"]*)\""],
+    ["@apply\\s([^;\\n]*)"]
+  ],
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.tabs.enableAnimation": false,
+  "update.mode": "manual",
+  "vim.handleKeys": {
+    "<C-b>": false,
+    "<C-d>": true,
+    "<C-f>": false,
+    "<C-j>": false,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "vim.highlightedyank.duration": 100,
+  "vim.highlightedyank.enable": true,
+  "vim.useSystemClipboard": true,
+  "window.commandCenter": false,
+  "window.restoreWindows": "none",
+  "window.title": "${rootName}${separator}${profileName}",
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/layout.jsx": "${dirname} - layout.jsx",
+    "**/app/**/layout.tsx": "${dirname} - layout.tsx",
+    "**/app/**/page.jsx": "${dirname} - page.jsx",
+    "**/app/**/page.tsx": "${dirname} - page.tsx"
+  },
+  "workbench.editor.showIcons": false,
+  "workbench.reduceMotion": "on",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.renderIndentGuides": "always"
+}
