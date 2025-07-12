@@ -2,3 +2,4 @@ autosuggest.enable = False
 clink.logo = short
 color.arg = nobold
 color.cmd = nobold
+fzf.default_bindings = True

@@ -19,7 +19,7 @@
   df = diff --diff-filter=ACMR
   dn = diff --name-status
 [user]
-  email = tm10ymhp@protonmail.com
+  email = tm10ymhp.editor919@slmails.com
   name = tm10ymhp
 [core]
   editor = nvim

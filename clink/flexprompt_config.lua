@@ -1,6 +1,4 @@
-local function my_first_module(args)
-  return "\n", "0"
-end
+local function my_first_module(args) return "\n", "0" end
 flexprompt.add_module("nl", my_first_module)
 
 flexprompt = flexprompt or {}
