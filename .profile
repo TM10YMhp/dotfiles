@@ -1,11 +1,3 @@
-# env
-
-# enable bash-completion
-# source $TERMUX__PREFIX/share/bash-completion/bash_completion
-
-eval "$(zoxide init bash)"
-eval "$(fzf --bash)"
-
 # no need in windows with `chcp 65001`
 export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 export DOTNET_TELEMETRY="1"
@@ -15,6 +7,13 @@ export MARKDOWN_PREVIEW_PORT=34567
 
 # path
 export PATH=~/.local/src/node-v18.14.0-linux-arm64/bin:$PATH
+
+
+# enable bash-completion
+# source $TERMUX__PREFIX/share/bash-completion/bash_completion
+
+eval "$(zoxide init bash)"
+eval "$(fzf --bash)"
 
 # fzf
 # NOTE: `fd` not work in windows
