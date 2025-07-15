@@ -8,7 +8,7 @@ bat                 0.25.0          main         2025-07-13 10:20:22
 bitwarden           2025.6.1        extras       2025-07-07 16:48:38     
 capture2text        4.6.3           extras       2025-06-12 19:29:26     
 chafa               1.16.2          main         2025-07-07 16:47:57     
-clink               1.7.20          main         2025-06-14 13:03:14     
+clink               1.7.21          main         2025-07-14 20:51:14     
 clink-completions   0.6.2           main         2025-02-06 20:29:49     
 clink-flex-prompt   0.18            main         2025-02-06 20:30:11     
 cmake               4.0.3           main         2025-06-15 12:42:53     
@@ -40,10 +40,9 @@ make                4.4.1           main         2025-01-13 11:06:25
 miktex              24.1            main         2025-02-20 21:29:15     
 mongosh             2.5.5           extras       2025-07-07 17:07:29     
 msklc               1.4             extras       2025-07-12 19:06:15     
-msys2               2025-06-22      main         2025-07-07 17:06:52     
 neovim              0.11.3          main         2025-07-12 20:28:44     
 nodejs-lts          22.17.0         main         2025-07-04 14:23:02     
-obs-studio          31.0.4          extras       2025-07-07 17:11:40     
+obs-studio          31.1.1          extras       2025-07-14 20:49:44     
 paint.net           5.1.8           extras       2025-05-26 12:13:19     
 perl                5.40.2.2        main         2025-06-15 12:50:10     
 php83               8.3.23          versions     2025-07-04 14:22:44     
@@ -55,11 +54,11 @@ ripgrep             14.1.1          main         2025-01-14 19:02:28
 shotcut             25.05.11        extras       2025-05-12 21:46:19     
 sqlite              3.50.2          main         2025-07-04 14:21:48     
 sumatrapdf          3.5.2           extras       2025-01-15 17:55:29     
-telegram            5.16.3          extras       2025-07-12 20:27:34     
+telegram            5.16.4          extras       2025-07-14 20:50:05     
 tidy                5.8.0           main         2025-01-14 18:58:49     
-tree-sitter         0.25.7          main         2025-07-12 20:27:36     
-uutils-coreutils    0.1.0           main         2025-05-26 12:17:44     
-uv                  0.7.20          main         2025-07-12 20:27:41     
+tree-sitter         0.25.8          main         2025-07-14 20:50:07     
+uutils-coreutils    0.1.0           main         2025-07-14 20:06:02     
+uv                  0.7.21          main         2025-07-14 20:50:14     
 vscode              1.102.0         extras       2025-07-12 20:28:15     
 windows-terminal    1.22.11751.0    extras       2025-07-07 17:12:15     
 zoxide              0.9.8           main         2025-05-26 20:51:41     
