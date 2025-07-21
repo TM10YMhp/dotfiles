@@ -43,7 +43,12 @@ config.colors = {
 }
 
 config.font = wezterm.font("Lexis")
+config.font_size = 6
 config.freetype_load_target = "Mono"
+config.freetype_load_flags = "MONOCHROME"
+
+config.cursor_blink_rate = 0
+
 config.enable_scroll_bar = true
 config.window_padding = {
   left = 4,
@@ -51,7 +56,6 @@ config.window_padding = {
   top = 4,
   bottom = 4,
 }
-config.font_size = 6
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_background_opacity = 1.0
 config.use_fancy_tab_bar = true
