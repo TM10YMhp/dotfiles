@@ -28,6 +28,16 @@ config.mouse_bindings = {
   --   action = act.OpenLinkAtMouseCursor,
   -- },
 }
+config.keys = {
+  {
+    key = " ",
+    mods = "CTRL",
+    action = act.SendKey({
+      key = " ",
+      mods = "CTRL",
+    }),
+  },
+}
 
 -- config.color_scheme = "Builtin Dark"
 -- config.color_scheme = "Brogrammer (Gogh)"
@@ -44,8 +54,8 @@ config.colors = {
 
 config.font = wezterm.font("Lexis")
 config.font_size = 6
-config.freetype_load_target = "Mono"
-config.freetype_load_flags = "MONOCHROME"
+-- config.freetype_load_target = "Mono"
+-- config.freetype_load_flags = "MONOCHROME"
 
 config.cursor_blink_rate = 0
 
