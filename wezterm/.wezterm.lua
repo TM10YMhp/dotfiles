@@ -1,11 +1,10 @@
----@type Wezterm
-local wezterm = require("wezterm")
+local wezterm = require("wezterm") --[[@as Wezterm]]
 
 wezterm.on("gui-startup", function()
   ---@type MuxTabObj, Pane, MuxWindow
   local _, _, _ = wezterm.mux.spawn_window({
     width = 105,
-    height = 81,
+    height = 84,
     position = {
       x = 633,
       y = 0,
@@ -51,27 +50,29 @@ config.colors = {
   cursor_fg = "#000000",
   cursor_border = "#52ad70",
 }
+config.inactive_pane_hsb = {}
 
 config.font = wezterm.font("Lexis")
 config.font_size = 6
 -- config.freetype_load_target = "Mono"
--- config.freetype_load_flags = "MONOCHROME"
 
 config.cursor_blink_rate = 0
 
 config.enable_scroll_bar = true
 config.window_padding = {
-  left = 4,
-  right = 8,
-  top = 4,
-  bottom = 4,
+  left = 3,
+  right = 7,
+  top = 0,
+  bottom = 0,
 }
+
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_background_opacity = 1.0
-config.use_fancy_tab_bar = true
+config.use_fancy_tab_bar = false
 config.front_end = "Software"
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
+config.bold_brightens_ansi_colors = false
 
 return config
