@@ -1,15 +1,15 @@
 local wezterm = require("wezterm") --[[@as Wezterm]]
 
-wezterm.on("gui-startup", function()
+wezterm.on("gui-startup", function(cmd)
+  local config = cmd or {}
+  config.width = 105
+  config.height = 84
+  config.position = {
+    x = 633,
+    y = 0,
+  }
   ---@type MuxTabObj, Pane, MuxWindow
-  local _, _, _ = wezterm.mux.spawn_window({
-    width = 105,
-    height = 84,
-    position = {
-      x = 633,
-      y = 0,
-    },
-  })
+  local _, _, _ = wezterm.mux.spawn_window(config)
 end)
 
 local config = wezterm.config_builder()
