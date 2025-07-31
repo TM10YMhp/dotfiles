@@ -1,4 +1,5 @@
 autosuggest.enable = False
+autosuggest.hint = False
 clink.logo = short
 color.arg = nobold
 color.cmd = nobold
