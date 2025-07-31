@@ -26,8 +26,22 @@ flexprompt.settings.symbols.prompt = ">"
 flexprompt.settings.prompt_symbol_color = "0"
 flexprompt.settings.lean_separators = " "
 
-flexprompt.defaultargs["time"] = "color=0:format=[%y.%m%d.%H%M|%S]"
-flexprompt.defaultargs["git"] =
-  "nountracked:nostaged:noaheadbehind:color=0:clean=0:conflict=0:dirty=0:remote=0:staged=0:unknown=0:unpublished=0"
+flexprompt.defaultargs["time"] = table.concat({
+  "color=0",
+  "format=[%y.%m%d.%H%M|%S]",
+}, ":")
+flexprompt.defaultargs["git"] = table.concat({
+  "color=0",
+  "untracked",
+  "nostaged",
+  "noaheadbehind",
+  "clean=0",
+  "conflict=0",
+  "dirty=0",
+  "remote=0",
+  "staged=0",
+  "unknown=0",
+  "unpublished=0",
+}, ":")
 flexprompt.defaultargs["python"] = "always:color=0"
 flexprompt.defaultargs["cwd"] = "type=full:color=0,0:rootcolor=0"
