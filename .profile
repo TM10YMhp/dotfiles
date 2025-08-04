@@ -30,4 +30,5 @@ export FZF_DEFAULT_OPTS="
 --preview="bat -n --color=always {}"
 --preview-window=hidden:down:50%
 --preview-border=top
+--tiebreak=pathname,end
 "
